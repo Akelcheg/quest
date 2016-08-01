@@ -10,6 +10,19 @@ questApp.factory('user', ['$http', '$location', '$window', function ($http, $loc
         $location.path('/login').replace();
     };
 
+    user.getPrivate = function () {
+        $http.get('api/private').success(function (data) {
+
+            console.log(data);
+
+        }).error(function (data, status) {
+
+                console.log(data);
+
+            }
+        );
+    };
+
     user.login = function (loginForm, cb) {
 
         $http.post('api/login', loginForm).success(function (data) {

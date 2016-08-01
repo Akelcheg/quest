@@ -21,7 +21,7 @@ class ApiController extends Controller
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
             'class' => HttpBearerAuth::className(),
-            'only' => ['dashboard'],
+            'only' => ['private'],
         ];
         $behaviors['contentNegotiator'] = [
             'class' => ContentNegotiator::className(),
@@ -29,17 +29,17 @@ class ApiController extends Controller
                 'application/json' => Response::FORMAT_JSON,
             ],
         ];
-        /*        $behaviors['access'] = [
-                    'class' => AccessControl::className(),
-                    'only' => ['dashboard'],
-                    'rules' => [
-                        [
-                            'actions' => ['dashboard'],
-                            'allow' => true,
-                            'roles' => ['@'],
-                        ],
-                    ],
-                ];*/
+        $behaviors['access'] = [
+            'class' => AccessControl::className(),
+            'only' => ['private'],
+            'rules' => [
+                [
+                    'actions' => ['private'],
+                    'allow' => true,
+                    'roles' => ['@'],
+                ],
+            ],
+        ];
         return $behaviors;
     }
 
@@ -76,6 +76,11 @@ class ApiController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionPrivate()
+    {
+        return 'hi';
     }
 
 }

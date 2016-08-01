@@ -8,7 +8,11 @@ questApp.controller('userController', ['$scope', '$location', 'user', function (
             return user.isLogedIn();
         },
 
-        logout : function () {
+        private: function () {
+            user.getPrivate();
+        },
+
+        logout: function () {
             user.logout();
         },
 
