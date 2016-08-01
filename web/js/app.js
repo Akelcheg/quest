@@ -15,7 +15,7 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
 
             .when('/login', {
                 templateUrl: 'partials/login.html',
-                controller: 'loginController'
+                controller: 'userController'
             })
 
             .otherwise({

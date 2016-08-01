@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\SignupForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\auth\HttpBearerAuth;
@@ -52,6 +53,22 @@ class ApiController extends Controller
             return $model;
         }
 
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->getRequest()->getBodyParams(), '') && $model->validate()) {
+
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return ['access_token' => Yii::$app->user->identity->getAuthKey()];
+                }
+            }
+
+        }
+
+        return $model;
     }
 
     public function actionLogout()
