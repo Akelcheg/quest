@@ -11,7 +11,7 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
-  * @property string $password_hash
+ * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
  * @property string $auth_key
@@ -66,6 +66,11 @@ class User extends ActiveRecord implements IdentityInterface
             'password_reset_token' => $token,
             'status' => self::STATUS_ACTIVE,
         ]);
+    }
+
+    public static function findByEmail($email)
+    {
+        return static::find()->where(['email' => $email, 'status' => self::STATUS_ACTIVE])->one();
     }
 
     /**
