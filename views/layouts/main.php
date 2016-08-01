@@ -13,8 +13,9 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" ng-app>
+<html lang="<?= Yii::$app->language ?>" ng-app="questApp">
 <head>
+    <base href="/quest/web/">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
@@ -60,7 +61,10 @@ AppAsset::register($this);
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= $content ?>
+
+        <?/*= $content */?>
+        <div ng-view></div>
+
     </div>
 </div>
 

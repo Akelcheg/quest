@@ -11,10 +11,13 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'js/app.js',
+        'js/indexController.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        'app\assets\AngularAsset'
+        'app\assets\AngularAsset',
+        'app\assets\AngularRouteAsset'
     ];
 }
