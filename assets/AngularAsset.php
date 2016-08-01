@@ -1,5 +1,9 @@
 <?php
 
+namespace app\assets;
+
+use yii\web\AssetBundle;
+
 class AngularAsset extends AssetBundle
 {
     public $sourcePath = '@bower/angular';
@@ -7,6 +11,5 @@ class AngularAsset extends AssetBundle
         'angular.min.js',
     ];
     public $depends = [
-        'assets\AppAsset',
     ];
 }
