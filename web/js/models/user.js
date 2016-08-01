@@ -1,48 +1,51 @@
 questApp.factory('user', ['$http', '$location', '$window', function ($http, $location, $window) {
     var user = {};
 
+    user.isLogedIn = function () {
+        return Boolean($window.sessionStorage.access_token);
+    };
+
+    user.logout = function () {
+        delete $window.sessionStorage.access_token;
+        $location.path('/login').replace();
+    };
+
     user.login = function (loginForm, cb) {
 
         $http.post('api/login', loginForm).success(function (data) {
 
             $window.sessionStorage.access_token = data.access_token;
-            //$location.path('/dashboard').replace();
-            console.log(data);
             return cb(true);
 
         }).error(function (data, status) {
 
-                var errorsArray = [];
+                var errorsObj = {};
 
                 angular.forEach(data, function (error) {
-                    errorsArray[error.field] = error.message;
+                    errorsObj[error.field] = error.message;
                 });
 
-                console.log(errorsArray);
-                return cb(false, errorsArray);
+                return cb(false, errorsObj);
 
             }
         );
     };
 
-    user.signup = function (signupForm,cb) {
+    user.signup = function (signupForm, cb) {
         $http.post('api/signup', signupForm).success(function (data) {
 
             $window.sessionStorage.access_token = data.access_token;
-            //$location.path('/dashboard').replace();
-            console.log(data);
             return cb(true);
 
         }).error(function (data, status) {
 
-                var errorsArray = [];
+                var errorsObj = {};
 
                 angular.forEach(data, function (error) {
-                    errorsArray[error.field] = error.message;
+                    errorsObj[error.field] = error.message;
                 });
 
-                console.log(errorsArray);
-                return cb(false, errorsArray);
+                return cb(false, errorsObj);
 
             }
         );

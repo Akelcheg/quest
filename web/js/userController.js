@@ -1,26 +1,40 @@
 'use strict';
 
-questApp.controller('userController', ['$scope','user', function ($scope,user) {
+questApp.controller('userController', ['$scope', '$location', 'user', function ($scope, $location, user) {
 
     angular.extend($scope, {
+
+        loggedIn: function () {
+            return user.isLogedIn();
+        },
+
+        logout : function () {
+            user.logout();
+        },
 
         login: function () {
 
             $scope.submitted = true;
             $scope.error = {};
 
-            user.login($scope.userModel,function (status) {
-              console.log (status);
+            user.login($scope.userModel, function (status, errorsObj) {
+
+                if (status == true) {
+                    $location.path('/').replace();
+                } else $scope.error = errorsObj;
             });
         },
 
-        signup : function () {
+        signup: function () {
 
-          user.signup($scope.signupModel,function (status) {
-              console.log (status);
-          });
+            user.signup($scope.signupModel, function (status, errorsObj) {
+                if (status == true) {
+                    $location.path('/').replace();
+                } else $scope.error = errorsObj;
+            });
 
         }
-    });
+    })
+    ;
 
 }]);
