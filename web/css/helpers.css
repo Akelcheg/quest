@@ -1,0 +1,22 @@
+.m20{
+	margin-top: 20px; 
+}
+
+div.inline-div{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:         flex;
+}
+
+p.c-coral{
+	color: #da3135;	
+}
+
+.t-left{
+	text-align: left;
+}
+
+.t-right{
+	text-align: right;
+}
