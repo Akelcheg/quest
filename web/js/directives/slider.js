@@ -42,10 +42,9 @@ questApp.directive('jssorSlider', [function () {
 
             var jssor_1_options = {
                 $FillMode: 2,
-
-
                 $AutoPlay: true,
                 $SlideDuration: 300,
+                //$AutoPlayInterval : 300,
                 $SlideEasing: $Jease$.$OutQuint,
                 $CaptionSliderOptions: {
                     $Class: $JssorCaptionSlideo$,

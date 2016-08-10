@@ -22,9 +22,7 @@ class AppAsset extends AssetBundle
         'js/aboutController.js',
         'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js',
         'js/libs/jquery-imagefill.js',
-        'js/libs/init.js',
         'js/libs/jssor.slider.min.js',
-        //'js/libs/slider.js',
         'js/directives/slider.js',
     ];
     public $depends = [
