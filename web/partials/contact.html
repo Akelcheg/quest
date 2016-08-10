@@ -1,5 +1,128 @@
-<div class="container-fluid about-place-main" style="color: white;">
+<div class="container-fluid mb50" style="background-color: white;">
     <div class="row">
-        GET IN TOUCH WITH US
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <h3>GET IN TOUCH WITH US</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Text">
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">SEND MESSAGE</button>
+                    </form>
+                    <!--<div class="quest-rules">
+                        <p>Minimum age of participants: 16 years.</p>
+                        <p>Please come on in quest of comfortable shoes without heels</p>
+                    </div>-->
+                </div>
+                <div class="col-md-3 col-md-offset-1" style="margin-top: 20px;">
+                    <div class="row contact-info">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-2"><p><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                                    </p></div>
+                                    <div class="col-md-10"><p>Address:</p></div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-10 col-md-offset-2"><p>654 DASdasd gerge rger, nf 15235</p></div>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-2"><p><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+                                    </p></div>
+                                    <div class="col-md-10"><p>Email:</p></div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-10 col-md-offset-2"><p>odajfewiojoi@gmail.com</p></div>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-2"><p><i class="fa fa-phone fa-2x" aria-hidden="true"></i></p>
+                                    </div>
+                                    <div class="col-md-10"><p>Phone:</p></div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-10 col-md-offset-2"><p>8 800 555 0600</p></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
+
+
+    <div style="margin-bottom: 50px;"></div>
+
+
 </div>
+<div id="map"></div>
+<script>
+
+    function initMap() {
+        var styles = [
+            {
+                "stylers": [
+                    {
+                        "hue": "#ff1a00"
+                    },
+                    {
+                        "invert_lightness": true
+                    },
+                    {
+                        "saturation": -100
+                    },
+                    {
+                        "lightness": 33
+                    },
+                    {
+                        "gamma": 0.5
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#2D333C"
+                    }
+                ]
+            }
+        ];
+        var styledMap = new google.maps.StyledMapType(styles,
+                {name: "Styled Map"});
+
+
+        var mapOptions = {
+            zoom: 12,
+            scrollwheel: false,
+            center: new google.maps.LatLng(55.6468, 37.581),
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+            }
+        };
+        var map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+
+        map.mapTypes.set('map_style', styledMap);
+        map.setMapTypeId('map_style');
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAORdNzOZKnybtZPUaEZhJivJUcd565Nmo&signed_in=true&callback=initMap"></script>
