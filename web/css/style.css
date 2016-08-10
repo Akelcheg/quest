@@ -1,314 +1,358 @@
-::-webkit-scrollbar {width: 9px; height: 3px; background: #090c0e;}
-::-webkit-scrollbar-thumb {background-color:#1f2225 ; border: 1px solid #1f2225;}
-body{
-	font-family: Open Sans;
-	background-color: #ebf2f6;	
-}
-/*NAVBAR BEGIN***********************************************************************************************************************/
-.navbar {
-	background-color: #090c0e;
-	/*position: absolute;
-	width:100%;*/
-	border-radius: 0;	
-	/*border-bottom: 1px solid #4c4e51;*/
-	margin-bottom: 0px;	
+::-webkit-scrollbar {
+    width: 9px;
+    height: 3px;
+    background: #090c0e;
 }
 
-.navbar .nav-icons{
-	display: inline;
-	margin-left: 5px;
-	font-size: 16px;
+::-webkit-scrollbar-thumb {
+    background-color: #1f2225;
+    border: 1px solid #1f2225;
+}
+
+body {
+    font-family: Open Sans;
+    background-color: #ebf2f6;
+}
+
+/*NAVBAR BEGIN***********************************************************************************************************************/
+.navbar {
+    background-color: #090c0e;
+    /*position: absolute;
+    width:100%;*/
+    border-radius: 0;
+    /*border-bottom: 1px solid #4c4e51;*/
+    margin-bottom: 0px;
+}
+
+.navbar .nav-icons {
+    display: inline;
+    margin-left: 5px;
+    font-size: 16px;
 }
 
 .navbar a {
-	color: #ffffff;
+    color: #ffffff;
 }
 
-.navbar ul li a:hover{
-	background-color: #1f2225;
+.navbar ul li a:hover {
+    background-color: #1f2225;
 }
 
-.navbar ul li a:focus{
-	background-color: #1f2225;
+.navbar ul li a:focus {
+    background-color: #1f2225;
 }
 
-.navbar ul li a:hover{
-	color: #fb383c;
+.navbar ul li a:hover {
+    color: #fb383c;
 }
 
 .navbar a.navbar-brand {
-	padding-top: 25px;	
-	padding-bottom: 25px;
-	height: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: auto;
 }
 
 .navbar ul li a {
-	/*padding-top: 25px;
-	padding-left: 25px;
-	padding-bottom: 25px;*/
+    /*padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;*/
 }
 
 button.navbar-toggle {
-	padding-top: 20px;	
+    padding-top: 20px;
 }
 
-button.navbar-toggle span{
-	background-color: #ffffff;
+button.navbar-toggle span {
+    background-color: #ffffff;
 }
+
 /*NAVBAR END*************************************************************************************************************************/
 
-div.about-place-main {		
-	padding-top: 6%;
-	padding-bottom: 10%;
-	background: url(../img/home-circles.png) no-repeat center;	
-	background-color: #090c0e;
+div.about-place-main {
+    padding-top: 6%;
+    padding-bottom: 10%;
+    background: url(../img/home-circles.png) no-repeat center;
+    background-color: #090c0e;
 }
 
-p.key-icon, p.key-text,p.key-icon-filled{
-	text-align: center;
+p.key-icon, p.key-text, p.key-icon-filled {
+    text-align: center;
 }
 
-p.key-icon-filled i {	
-	color: white;
-	background:#fb383c;
-	padding:15px;
-	-webkit-border-radius:100%;
-	-moz-border-radius:100%;
-	-o-border-radius:100%;
-	border-radius:100%;
-	border:2px solid #fb383c;
+p.key-icon-filled i {
+    color: white;
+    background: #fb383c;
+    padding: 15px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid #fb383c;
 }
 
 p.key-icon i {
-	padding:15px;
-	-webkit-border-radius:100%;
-	-moz-border-radius:100%;
-	-o-border-radius:100%;
-	border-radius:100%;
-	border:2px solid #fb383c;
+    padding: 15px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid #fb383c;
 
 }
 
 img.main-key-image {
-	margin:0 auto;
-	padding-left: 15px;
+    margin: 0 auto;
+    padding-left: 15px;
 }
 
-p.reality-tasks{
-	font-size: 16px;
-	color: #676c71;	
+p.reality-tasks {
+    font-size: 16px;
+    color: #676c71;
 }
 
-p.reality-tasks-header p{
-	
+p.reality-tasks-header p {
+
 }
+
 /*QUESTS END*************************************************************************************************************************/
-.quest-info .description{
-	color: #cfcfcf;
+.quest-info .description {
+    color: #cfcfcf;
 }
 
-.quest-info .description p{
-	margin-top: 25px;
-	font-size: 16px;
-}
-.quest-info{
-	background-color: #090c0e;
-	padding:2%;
-}
-.quest-info .quest-price-container {	
-	border-radius: 50%;
-	border: 1px solid white;	
-	width: 150px;
-	height: 150px;	
+.quest-info .description p {
+    margin-top: 25px;
+    font-size: 16px;
 }
 
-.quest-info .additional-info{
-	margin-top: 25px;
-}
-.quest-info .select-game-button{
-	margin-top: 25px;
+.quest-info {
+    background-color: #090c0e;
+    padding: 2%;
 }
 
-.quest-info .quest-price {	
-	color: white;
-	font-size: 28px;	
-	text-align: center;
-	line-height: 150px;
-}
-.quest-info h3{
-	color: white;
+.quest-info .quest-price-container {
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 150px;
+    height: 150px;
 }
 
+.quest-info .additional-info {
+    margin-top: 25px;
+}
+
+.quest-info .select-game-button {
+    margin-top: 25px;
+}
+
+.quest-info .quest-price {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.quest-info h3 {
+    color: white;
+}
 
 /*QUESTS BEGIN***********************************************************************************************************************/
 /*FOOTER BEGIN***********************************************************************************************************************/
 .footer {
-	background-color: #1f2225;
-	color: white;
+    background-color: #1f2225;
+    color: white;
 }
 
-.footer p{
-	color: #686d72;
+.footer p {
+    color: #686d72;
 }
 
 .footer .social-icons {
-	
-	text-align: right;
+
+    text-align: right;
 }
+
 .footer .social-icons a {
-	color: white;	
-	text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
+
 .footer .social-icons a:hover {
-	color: #fb383c;		
+    color: #fb383c;
 }
+
 .footer .social-icons span {
-/*	display: inline;	
-	padding: 15px;	 
-	color: white;
-	margin-left: 10px; 
-	background:#16181a;	
-	-webkit-border-radius:100%;
-	-moz-border-radius:100%;
-	-o-border-radius:100%;
-	border-radius:100%;
-	border:1px solid #16181a;*/
-	margin-left: 10px; 
-	background-color: white;
-	text-align:center;
-	border-radius: 100%;
-	border:1px solid #16181a;
-	background:#16181a;
-	font-size: 18px;
+    /*	display: inline;
+        padding: 15px;
+        color: white;
+        margin-left: 10px;
+        background:#16181a;
+        -webkit-border-radius:100%;
+        -moz-border-radius:100%;
+        -o-border-radius:100%;
+        border-radius:100%;
+        border:1px solid #16181a;*/
+    margin-left: 10px;
+    background-color: white;
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid #16181a;
+    background: #16181a;
+    font-size: 18px;
 }
+
 /*FOOTER END***********************************************************************************************************************/
 /*SLIDER BEGIN***********************************************************************************************************************/
 .tales {
-	width: 100%;
-}
-.carousel-inner{
-	width:100%;
-	max-height: 200px !important;
-}
-.layer{
-	background-color: rgba(0, 0, 0, 0.5);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-/*SLIDER END***********************************************************************************************************************/
-/*QUEST PAGE BEGIN*****************************************************************************************************************/
-.quest-price-div{
-	background-color: #1f2225;
-	color: white;
-	text-align: center;
-}
-.quest-price-div p{
-	padding: 30px;
-	font-size: 30px;
-} 
-.quest-params-div{	
-	background-color: white;
-	text-align: center;	
-	padding-bottom: 15px;
-	margin-bottom: 15px;	
-}
-.quest-params-div span {
-	margin-right: 5px;
-	color: #fb383c;
-}
-.quest-params-div p {
-	padding: 15px;
-	font-size: 18px;
-	text-align: left;
-}
-.quest-rules{	
-	border-left: 4px solid #fb383c;
-}
-.quest-rules p{
-	color: #1f2225;
-	font-size: 18px;
-	padding-left: 15px;
-	margin-bottom: 0;
-}
-#map {
-	width: 100%;
-	height: 350px;
-	background-color: #CCC;
+    width: 100%;
 }
 
-@media (min-width: 768px){
-	.seven-cols .col-md-1,
-	.seven-cols .col-sm-1,
-	.seven-cols .col-lg-1  {
-		width: 100%;
-		*width: 100%;
-	}
+.carousel-inner {
+    width: 100%;
+    max-height: 200px !important;
+}
+
+.layer {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*SLIDER END***********************************************************************************************************************/
+/*QUEST PAGE BEGIN*****************************************************************************************************************/
+.quest-price-div {
+    background-color: #1f2225;
+    color: white;
+    text-align: center;
+}
+
+.quest-price-div p {
+    padding: 30px;
+    font-size: 30px;
+}
+
+.quest-params-div {
+    background-color: white;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.quest-params-div span {
+    margin-right: 5px;
+    color: #fb383c;
+}
+
+.quest-params-div p {
+    padding: 15px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.quest-rules {
+    border-left: 4px solid #fb383c;
+}
+
+.quest-rules p {
+    color: #1f2225;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+#map {
+    width: 100%;
+    height: 350px;
+    background-color: #CCC;
+}
+
+@media (min-width: 768px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 100%;
+        *width: 100%;
+    }
 }
 
 @media (min-width: 992px) {
-	.seven-cols .col-md-1,
-	.seven-cols .col-sm-1,
-	.seven-cols .col-lg-1 {
-		width: 12.285714285714285714285714285714%;
-		*width: 12.285714285714285714285714285714%;
-	}
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 12.285714285714285714285714285714%;
+        *width: 12.285714285714285714285714285714%;
+    }
 }
 
 /**
  *  The following is not really needed in this case
  *  Only to demonstrate the usage of @media for large screens
- */    
- @media (min-width: 1200px) {
- 	.seven-cols .col-md-1,
- 	.seven-cols .col-sm-1,
- 	.seven-cols .col-lg-1 {
- 		width: 12.285714285714285714285714285714%;
- 		*width: 12.285714285714285714285714285714%;
- 	}
- }
- .seven-cols .calendar{
- 	margin: 10px;
- 	border: 5px solid #dde5e9; 
- 	padding: 10px;
- 	text-align:center;
- }
+ */
+@media (min-width: 1200px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 12.285714285714285714285714285714%;
+        *width: 12.285714285714285714285714285714%;
+    }
+}
 
- .seven-cols .calendar.blocked p {
- 	color: #fb383c;
- }
+.seven-cols .calendar {
+    margin: 10px;
+    border: 5px solid #dde5e9;
+    padding: 10px;
+    text-align: center;
+}
 
- .seven-cols .calendar.blocked button.book{
- 	background-color: #ebf2f6;	
- 	cursor: not-allowed;
- }
+.seven-cols .calendar.blocked p {
+    color: #fb383c;
+}
 
- .seven-cols .calendar.current button.book{
- 	background-color: #fb383c;
- }
+.seven-cols .calendar.blocked button.book {
+    background-color: #ebf2f6;
+    cursor: not-allowed;
+}
 
- button.book {
- 	padding: 5px 5px;
- 	background-color: #1f2225;
- 	color: white;    
- 	border: 0 none;
- 	font-weight: 500;
- 	font-size: 12px;
- 	letter-spacing: 1px;
- 	text-transform: uppercase;
- }
+.seven-cols .calendar.current button.book {
+    background-color: #fb383c;
+}
+
+button.book {
+    padding: 5px 5px;
+    background-color: #1f2225;
+    color: white;
+    border: 0 none;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 /*QUEST PAGE END*******************************************************************************************************************/
 /**********************************CONTACT PAGE******************************************/
+i.fa-1_5x {
+    font-size: 1.5em;
+}
 
 .contact-info i {
-	/*font-size: 24px;*/
-	color:#fc7073;
+    /*font-size: 24px;*/
+    color: #fc7073;
 }
+
 .contact-info p {
-	text-align: left;
-	font-size: 16px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.contact-form .form-group input {
+    margin-top: 30px;
+    font-size: 16px;
+    border-radius: 0;
+    border: 1px solid white;
+    box-shadow: none;
+    border-bottom: 1px solid #dcdee0;
 }
 
 /**********************************CONTACT PAGE******************************************/
