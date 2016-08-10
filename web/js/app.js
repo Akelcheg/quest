@@ -20,8 +20,8 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 controller: 'aboutController'
             })
             .when('/gift', {
-                templateUrl: 'partials/quest_desc.html',
-                controller: 'aboutController'
+                templateUrl: 'partials/gift.html',
+                //controller: 'giftController'
             })
 
             .when('/login', {

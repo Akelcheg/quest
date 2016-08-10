@@ -12,7 +12,8 @@ class AppAsset extends AssetBundle
         /*'css/site.css',*/
         'css/style.css',
         'css/slider.css',
-        'css/helpers.css'
+        'css/helpers.css',
+        'css/timeline.css'
     ];
     public $js = [
         'js/app.js',

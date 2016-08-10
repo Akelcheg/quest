@@ -1,3 +1,7 @@
+.glyphicon{
+    line-height: 0;
+    top: 3px;
+}
 ::-webkit-scrollbar {
     width: 9px;
     height: 3px;
