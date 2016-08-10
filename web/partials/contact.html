@@ -1,3 +1,4 @@
+
 <div class="container-fluid mb50" style="background-color: white;">
     <div class="row">
 
@@ -71,58 +72,4 @@
 
 
 </div>
-<div id="map"></div>
-<script>
-
-    function initMap() {
-        var styles = [
-            {
-                "stylers": [
-                    {
-                        "hue": "#ff1a00"
-                    },
-                    {
-                        "invert_lightness": true
-                    },
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 33
-                    },
-                    {
-                        "gamma": 0.5
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#2D333C"
-                    }
-                ]
-            }
-        ];
-        var styledMap = new google.maps.StyledMapType(styles,
-                {name: "Styled Map"});
-
-
-        var mapOptions = {
-            zoom: 12,
-            scrollwheel: false,
-            center: new google.maps.LatLng(55.6468, 37.581),
-            mapTypeControlOptions: {
-                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-            }
-        };
-        var map = new google.maps.Map(document.getElementById('map'),
-                mapOptions);
-
-        map.mapTypes.set('map_style', styledMap);
-        map.setMapTypeId('map_style');
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAORdNzOZKnybtZPUaEZhJivJUcd565Nmo&signed_in=true&callback=initMap"></script>
+<div my-map=""></div>

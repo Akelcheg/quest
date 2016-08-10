@@ -38,7 +38,6 @@ questApp.controller('userController', ['$scope', '$location', 'user', function (
             });
 
         }
-    })
-    ;
+    });
 
 }]);
