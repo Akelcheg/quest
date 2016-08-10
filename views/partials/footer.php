@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-md-1" style="padding-top: 1%;">
-                <img class="img-responsive" src="img/home-key.png">
+                <img class="img-responsive" src="/img/home-key.png">
             </div>
         </div>
         <div class="row">

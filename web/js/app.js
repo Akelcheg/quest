@@ -7,11 +7,22 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 templateUrl: 'partials/index.html',
                 controller: 'indexController'
             })
-            /*
-             .when('/hi', {
-             templateUrl: 'partials/hi.html',
-             controller: 'indexController'
-             })*/
+            .when('/quests', {
+                templateUrl: 'partials/hi.html',
+                controller: 'indexController'
+            })
+            .when('/contact', {
+                templateUrl: 'partials/contact.html',
+                controller: 'contactController'
+            })
+            .when('/about', {
+                templateUrl: 'partials/about.html',
+                controller: 'aboutController'
+            })
+            .when('/gift', {
+                templateUrl: 'partials/quest_desc.html',
+                controller: 'aboutController'
+            })
 
             .when('/login', {
                 templateUrl: 'partials/login.html',

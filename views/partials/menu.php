@@ -6,13 +6,13 @@ use yii\helpers\Url;
 
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="userController">
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/quest/web/">ГЛАВНАЯ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
-        <li><a href="/quest/web/hi">КВЕСТЫ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a>
+        <li><a href="/">ГЛАВНАЯ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
+        <li><a href="/quests">КВЕСТЫ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a>
         </li>
-        <li><a href="#">КОНТАКТЫ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
-        <li><a href="#">О НАС <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
+        <li><a href="/contact">КОНТАКТЫ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
+        <li><a href="/about">О НАС <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
         <li><a href="#">ФРАНШИЗА <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
-        <li><a href="#">ПОДАРОК <p class="nav-icons"><i class="fa fa-gift" aria-hidden="true"></i></p></a></li>
+        <li><a href="/gift">ПОДАРОК <p class="nav-icons"><i class="fa fa-gift" aria-hidden="true"></i></p></a></li>
         <li ng-show="loggedIn()" ng-click="private()" class="ng-hide">
             <a href="#">КАБИНЕТ<p class="nav-icons"><i class="fa fa-gift" aria-hidden="true"></i></p></a>
         </li>

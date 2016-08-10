@@ -1,4 +1,7 @@
-<nav class="navbar">
+<nav class="navbar" style="  position:absolute;
+	background: transparent;
+	left:0px;
+	width:100%; z-index: 1;">
     <div class="container-fluid">
 
         <div class="navbar-header logo-div">

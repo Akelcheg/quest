@@ -2,7 +2,7 @@
 
 questApp.controller('userController', ['$scope', '$location', 'user', function ($scope, $location, user) {
 
-    angular.extend($scope, {
+        angular.extend($scope, {
 
         loggedIn: function () {
             return user.isLogedIn();
