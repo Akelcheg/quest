@@ -15,6 +15,10 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 templateUrl: 'partials/contact.html',
                 controller: 'contactController'
             })
+            .when('/franchize', {
+                templateUrl: 'partials/franchize.html',
+                //controller: 'aboutController'
+            })
             .when('/about', {
                 templateUrl: 'partials/about.html',
                 controller: 'aboutController'

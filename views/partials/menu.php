@@ -11,7 +11,7 @@ use yii\helpers\Url;
         </li>
         <li><a href="/contact">КОНТАКТЫ <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
         <li><a href="/about">О НАС <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
-        <li><a href="#">ФРАНШИЗА <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
+        <li><a href="/franchize">ФРАНШИЗА <p class="nav-icons"><i class="fa fa-key" aria-hidden="true"></i></p></a></li>
         <li><a href="/gift">ПОДАРОК <p class="nav-icons"><i class="fa fa-gift" aria-hidden="true"></i></p></a></li>
         <li ng-show="loggedIn()" ng-click="private()" class="ng-hide">
             <a href="#">КАБИНЕТ<p class="nav-icons"><i class="fa fa-gift" aria-hidden="true"></i></p></a>
