@@ -360,3 +360,33 @@ i.fa-1_5x {
 }
 
 /**********************************CONTACT PAGE******************************************/
+/*****************************************STATISTICS****************************************************************/
+.statistics{
+    height: 100%;
+    text-align: center;
+}
+
+.statistics div{
+    height: 100%;
+}
+
+.statistics .center{
+    border-right: 1px solid #353638;
+    border-left: 1px solid #353638;
+}
+
+.statistics p {
+    line-height: 100px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.statistics p.count{
+    font-size: 28px;
+    color: white;
+}
+.statistics p.desc{
+    font-size: 18px;
+    color: #6c7176;
+}
+/*****************************************STATISTICS****************************************************************/
