@@ -376,9 +376,9 @@ i.fa-1_5x {
 }
 
 .statistics p {
-    line-height: 100px;
     vertical-align: middle;
     display: inline;
+    line-height: 100px;
 }
 
 .statistics p.count{

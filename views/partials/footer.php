@@ -1,4 +1,4 @@
-<div class="footer">
+<footer class="footer">
     <div class="container">
 
         <div class="row">
@@ -12,7 +12,7 @@
                         Fusce aliquet quam eget neque ultrices elementum. </p>
                 </div>
             </div>
-            <div class="col-md-3 col-md-offset-1">
+            <div class="col-md-3">
                 <div class="row">
                     <h3>Contact</h3>
                 </div>
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-11 col-md-offset-1" style="border-top: 1px solid #6c7176; padding-bottom:15px;">
+            <div class="col-md-10 col-md-offset-1" style="border-top: 1px solid #6c7176; padding-bottom:15px;">
                 <div class="row" style="margin-top:15px; margin-bottom: 15px;">
                     <div class="col-md-3" style="text-align: center;">
                         © 2015. All Rights Reserved.
@@ -65,4 +65,4 @@
 
 
     </div>
-</div>
+</footer>

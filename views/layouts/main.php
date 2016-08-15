@@ -18,7 +18,7 @@ AppAsset::register($this);
     <base href="/questhouse">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?/*= Html::csrfMetaTags() */?>
+    <? /*= Html::csrfMetaTags() */ ?>
     <!--<title><? /*= Html::encode($this->title) */ ?></title>-->
     <title>Spa angular page</title>
     <?php $this->head() ?>
@@ -31,7 +31,7 @@ AppAsset::register($this);
 ]) ?>
 
 
-<div ng-view ></div>
+<div ng-view></div>
 
 <?php echo $this->render('../partials/footer.php') ?>
 
