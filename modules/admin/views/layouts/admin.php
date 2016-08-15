@@ -22,8 +22,18 @@ AdminAppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+<?php echo $this->render('../partials/top_nav.php') ?>
+<div class="container-fluid">
+    <div class="row">
+        <?php echo $this->render('../partials/menu.php') ?>
+        <!-- /col-3 -->
+        <div class="col-sm-9">
+            <?= $content ?>
 
-<?= $content ?>
+            <!--/col-span-9-->
+        </div>
+    </div>
+</div>
 
 <?php $this->endBody() ?>
 
