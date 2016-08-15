@@ -33,13 +33,12 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 controller: 'userController'
             })
 
-            .otherwise({
+            /*.otherwise({
                 templateUrl: 'partials/404.html'
-            });
+            });*/
 
         $httpProvider.interceptors.push('authInterceptor');
         $locationProvider.html5Mode(true);
-
     },
 ]);
 
