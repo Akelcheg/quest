@@ -1,7 +1,8 @@
-.glyphicon{
+.glyphicon {
     line-height: 0;
     top: 3px;
 }
+
 ::-webkit-scrollbar {
     width: 9px;
     height: 3px;
@@ -13,18 +14,17 @@
     border: 1px solid #1f2225;
 }
 
-body {
-
+html, body {
     background-color: #ebf2f6;
 }
 
 /*NAVBAR BEGIN***********************************************************************************************************************/
 .navbar {
-    background-color: #090c0e;
+    background-color: #1f2225;
     /*position: absolute;
     width:100%;*/
     border-radius: 0;
-    /*border-bottom: 1px solid #4c4e51;*/
+    border-bottom: 1px solid #4c4e51;
     margin-bottom: 0px;
 }
 

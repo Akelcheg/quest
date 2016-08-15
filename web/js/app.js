@@ -8,7 +8,7 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 controller: 'indexController'
             })
             .when('/quests', {
-                templateUrl: 'partials/hi.html',
+                templateUrl: 'partials/quest_desc.html',
                 controller: 'indexController'
             })
             .when('/contact', {

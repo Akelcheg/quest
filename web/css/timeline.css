@@ -10,7 +10,7 @@
     position: absolute;
     content: " ";
     width: 3px;
-    background-color: #eeeeee;
+    background-color: #ff777d;
     left: 50%;
     margin-left: -1.5px;
 }
@@ -152,6 +152,10 @@
 .timeline-title {
     margin-top: 0;
     color: inherit;
+}
+
+.timeline-panel{
+    background-color: white;
 }
 
 .timeline-body > p,

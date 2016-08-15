@@ -30,7 +30,8 @@ AppAsset::register($this);
     'menu' => $this->render('../partials/menu.php')
 ]) ?>
 
-<div ng-view></div>
+
+<div ng-view ></div>
 
 <?php echo $this->render('../partials/footer.php') ?>
 
