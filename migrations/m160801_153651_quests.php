@@ -13,9 +13,13 @@ class m160801_153651_quests extends Migration
             'price_average' => Schema::TYPE_INTEGER . '(6) NOT NULL',
             'price_holiday' => Schema::TYPE_INTEGER . '(6) NOT NULL',
             'people' => Schema::TYPE_INTEGER . '(3) NOT NULL',
+            'is_open' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'description' => Schema::TYPE_TEXT . ' NOT NULL',
+            'passing_percentage' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'quest_holder' => Schema::TYPE_INTEGER . ' NOT NULL',
 
-            'updated_at' => $this->timestamp()->defaultValue(null),
-            'created_at' => $this->dateTime() . ' DEFAULT NOW()'
+            'updated_at' => $this->timestamp() . ' DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP',
+            'created_at' => $this->timestamp() . ' DEFAULT NOW()'
         ]);
 
     }

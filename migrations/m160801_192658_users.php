@@ -20,8 +20,8 @@ class m160801_192658_users extends Migration
             'email' => $this->string()->notNull()->unique(),
 
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
+            'updated_at' => $this->timestamp() . ' DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP',
+            'created_at' => $this->timestamp() . ' DEFAULT NOW()'
         ], $tableOptions);
     }
 

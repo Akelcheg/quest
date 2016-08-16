@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\QuestTime;
 use Yii;
 use app\models\Quest;
 use app\models\QuestSearch;
@@ -64,12 +65,27 @@ class QuestController extends Controller
     public function actionCreate()
     {
         $model = new Quest();
+        $questTime = new QuestTime();
 
+        $s = '1';
+
+        $timeFrom = Yii::$app->request->post('time-from');
+        $timeTo = Yii::$app->request->post('time-to');
+        $timeRest = Yii::$app->request->post('time-rest');
+
+        $x = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
+
+        if (Yii::$app->request->post('time-from') && Yii::$app->request->post('time-from')) {
+            $s = $x;
+        }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+
             return $this->render('create', [
                 'model' => $model,
+                'questTime' => $questTime,
+                'stringHash' => $s,
             ]);
         }
     }
@@ -85,7 +101,10 @@ class QuestController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
+            return $this->render('update', [
+                'model' => $model,
+            ]);
         } else {
             return $this->render('update', [
                 'model' => $model,

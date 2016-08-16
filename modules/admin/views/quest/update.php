@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Quest */
@@ -13,9 +14,9 @@ $this->params['breadcrumbs'][] = 'Update';
 <div class="quest-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?php Pjax::begin(); ?>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
+    <?php Pjax::end(); ?>
 </div>
