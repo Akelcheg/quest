@@ -10,6 +10,7 @@ class m160801_153651_quests extends Migration
         $this->createTable('quests', [
             'id' => 'pk',
             'name' => Schema::TYPE_STRING . '(255) NOT NULL',
+            'image' => Schema::TYPE_STRING . '(255) NOT NULL',
             'people' => Schema::TYPE_INTEGER . '(3) NOT NULL',
             'is_open' => Schema::TYPE_INTEGER . ' NOT NULL',
             'description' => Schema::TYPE_TEXT . ' NOT NULL',

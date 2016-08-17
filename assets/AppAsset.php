@@ -18,6 +18,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/app.js',
         'js/models/user.js',
+        'js/models/quest.js',
         'js/indexController.js',
         'js/userController.js',
         'js/contactController.js',

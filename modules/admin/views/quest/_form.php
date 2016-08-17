@@ -25,7 +25,15 @@ use yii\widgets\Pjax;
                 //'options' => ['data' => ['pjax' => true]],
                 // more ActiveForm options
             ]); ?>
+
             <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($imageModel, 'imageFile')->fileInput() ?>
+                </div>
+            </div>
+
+            <div class="row">
+
                 <div class="col-md-3">
                     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                 </div>

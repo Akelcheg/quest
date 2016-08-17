@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Image;
 use app\models\QuestTime;
 use Yii;
 use app\models\Quest;
@@ -9,6 +10,7 @@ use app\models\QuestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * QuestController implements the CRUD actions for Quest model.
@@ -65,26 +67,26 @@ class QuestController extends Controller
     public function actionCreate()
     {
         $model = new Quest();
+        $imageModel = new Image();
         $questTime = new QuestTime();
         $timePriceArray = [];
-        if (!Yii::$app->request->post('time-price'))
-            //$timePriceArray = [];
-            $x = Yii::$app->request->post('time-price');
-        //else $timePriceArray = Yii::$app->request->post('time-price');
-
-        //var_dump(Yii::$app->request->post());
-        //$x = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
-        //if (Yii::$app->request->post('time-rest') && Yii::$app->request->post('time-from') && Yii::$app->request->post('time-from')) {
 
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        //if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) /*&& $model->save()*/) {
+            $imageModel->imageFile = UploadedFile::getInstance($imageModel, 'imageFile');
+            $model->image = $imageModel->imageFile->name;
+            if ($model->save()) {
+                if ($imageModel->saveQuestImage($model->id))
+                    return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
 
             return $this->render('create', [
                 'model' => $model,
                 'questTime' => $questTime,
-                'timePriceArray' => $timePriceArray
+                'timePriceArray' => $timePriceArray,
+                'imageModel' => $imageModel
             ]);
         }
     }

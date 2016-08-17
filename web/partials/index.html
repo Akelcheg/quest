@@ -85,12 +85,12 @@
 
 <div class="container-fluid" style="background-color: #1f2225; width:100%;min-height: 100px;">
     <div class="row">
-        <div class="col-md-12 statistics">
-            <div class="col-md-4"><p class="count">2351</p>
+        <div class="statistics">
+            <div class="col-md-4 col-sm-4"><p class="count">2351</p>
                 <p class="desc"> / счастивых клиентов</p></div>
-            <div class="col-md-4 center"><p class="count">1158</p>
+            <div class="col-md-4 col-sm-4 center"><p class="count">1158</p>
                 <p class="desc"> / вышло из комнат</p></div>
-            <div class="col-md-4"><p class="count">2158</p>
+            <div class="col-md-4 col-sm-4"><p class="count">2158</p>
                 <p class="desc"> / сыграно игр</p></div>
         </div>
     </div>
@@ -108,83 +108,176 @@
     </div>
 </div>
 
-<div class="container-fluid m20">
-    <div class="row">
-        <div class="col-md-6 quest-list-image" style="padding: 0;">
-            <img class="img-responsive" src="img/quest-images/1.jpg">
+<div class="container-fluid" style="padding: 0;">
+
+    <div class="row row-height" style="margin: 0;">
+
+
+        <div class="col-md-6" style="padding: 0;">
+
+            <img class="img img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
         </div>
-        <div class="col-md-6 quest-info">
-            <div class="col-md-9">
-                <h3>Lorem ipsum dolor sit</h3>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
 
-                    <div class="row additional-info">
-                        <div class="col-md-4">55 Wall Street</div>
-                        <div class="col-md-4">2 - 4 people</div>
-                        <div class="col-md-4">60 minutes</div>
-                    </div>
+        <div class="col-md-6 col-sm-12 quest-info" style="padding: 0; background-color: #1f2225; color: white;">
 
-                </div>
-                <div class="row select-game-button">
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-danger">ВЫБРАТЬ ИГРУ</button>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-9">1 das reg erg erg er as,mkdfijao foehghwegwe gwe</div>
+                    <div class="col-md-3">
+                        <div class="quest-price-container" style="margin: 20px auto;">
+                            <p class="quest-price">
+                                666 грн
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-2">
-                <div class="quest-price-container" style="margin: 20px auto;">
-                    <p class="quest-price">
-                        666 грн
-                    </p>
-                </div>
-            </div>
+
         </div>
+
     </div>
-    <div class="row">
+    <div class="row row-height" style="margin: 0;">
 
-        <div class="col-md-6 quest-info">
-
-            <div class="col-md-9">
-                <h3>Lorem ipsum dolor sit amet</h3>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-
-                    <div class="row additional-info">
-                        <div class="col-md-4">55 Wall Street</div>
-                        <div class="col-md-4">2 - 4 people</div>
-                        <div class="col-md-4">60 minutes</div>
-                    </div>
-
-                </div>
-                <div class="row select-game-button">
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-danger">ВЫБРАТЬ ИГРУ</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-2">
-                <div class="quest-price-container" style="margin: 20px auto;">
-                    <p class="quest-price">
-                        666 грн
-                    </p>
-                </div>
-            </div>
+        <div class="col-md-6 col-sm-12" style="padding: 0; background-color: #1f2225;">
 
 
         </div>
-        <div class="col-md-6 quest-list-image" style="padding: 0;">
-            <img class="img-responsive" src="img/quest-images/1.jpg">
+        <div class="col-md-6" style="padding: 0;">
+
+            <img class="img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
         </div>
 
     </div>
 
 </div>
+
+
+<!--
+<div class="container-fluid">
+    <div class="row">
+
+        <div ng-repeat="quest in quests">
+
+            <div class="row is-table-row" ng-if="$index%2 == 0">
+                <div class="col-md-6 quest-list-image" style="padding: 0;">
+                    <img class="img-responsive" ng-src="img/quest-images/{{quest.id}}/main.jpg">
+                </div>
+                <div class="col-md-6 quest-info">
+                    <div class="col-md-9">
+                        <h3>{{quest.name}} {{quest.id}}</h3>
+                        <div class="description">
+                            <p>{{quest.description}}</p>
+
+                            <div class="row additional-info">
+                                <div class="col-md-4">55 Wall Street</div>
+                                <div class="col-md-4">{{quest.description}} people</div>
+                                <div class="col-md-4">60 minutes</div>
+                            </div>
+
+                        </div>
+                        <div class="row select-game-button">
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger">ВЫБРАТЬ ИГРУ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="quest-price-container" style="margin: 20px auto;">
+                            <p class="quest-price">
+                                666 грн
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row is-table-row" ng-if="$index%2 != 0">
+                <div class="col-md-6 quest-info">
+
+                    <div class="col-md-9">
+                        <h3>{{quest.name}} {{quest.id}}</h3>
+                        <div class="description">
+                            <p>{{quest.description}}</p>
+                            <div class="row additional-info">
+                                <div class="col-md-4">55 Wall Street</div>
+                                <div class="col-md-4">{{quest.people}} people</div>
+                                <div class="col-md-4">60 minutes</div>
+                            </div>
+
+                        </div>
+                        <div class="row select-game-button">
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger">ВЫБРАТЬ ИГРУ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="quest-price-container" style="margin: 20px auto;">
+                            <p class="quest-price">
+                                666 грн
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 quest-list-image" style="padding: 0;">
+                    <img class="img-responsive" ng-src="img/quest-images/{{quest.id}}/main.jpg">
+                </div>
+            </div>
+
+
+        </div>
+
+
+        &lt;!&ndash;<div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 quest-info">
+
+                    <div class="col-md-9">
+                        <h3>Lorem ipsum dolor sit amet</h3>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+
+                            <div class="row additional-info">
+                                <div class="col-md-4">55 Wall Street</div>
+                                <div class="col-md-4">2 - 4 people</div>
+                                <div class="col-md-4">60 minutes</div>
+                            </div>
+
+                        </div>
+                        <div class="row select-game-button">
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-danger">ВЫБРАТЬ ИГРУ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="quest-price-container" style="margin: 20px auto;">
+                            <p class="quest-price">
+                                666 грн
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 quest-list-image" style="padding: 0;">
+                    <img class="img-responsive" src="img/quest-images/1.jpg">
+                </div>
+            </div>
+        </div>&ndash;&gt;
+
+    </div>
+
+</div>-->

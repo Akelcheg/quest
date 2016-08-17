@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property string $image
  * @property integer $people
  * @property integer $is_open
  * @property string $description
@@ -33,9 +34,9 @@ class Quest extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'people', 'is_open', 'description', 'passing_percentage', 'quest_holder'], 'required'],
+            [['name', 'people', 'image', 'is_open', 'description', 'passing_percentage', 'quest_holder'], 'required'],
             [['people', 'is_open', 'passing_percentage', 'quest_holder'], 'integer'],
-            [['description'], 'string'],
+            [['image', 'description'], 'string'],
             [['updated_at', 'created_at'], 'safe'],
             [['name'], 'string', 'max' => 255],
         ];
@@ -49,6 +50,7 @@ class Quest extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'image' => 'Фото квеста',
             'people' => 'People',
             'is_open' => 'Is Open',
             'description' => 'Description',
