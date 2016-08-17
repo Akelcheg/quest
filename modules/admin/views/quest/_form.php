@@ -27,22 +27,22 @@ use yii\widgets\Pjax;
             ]); ?>
             <div class="row">
                 <div class="col-md-3">
-                    <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'value' => 'Name']) ?>
+                    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'people')->textInput(['maxlength' => true, 'value' => '4']) ?>
+                    <?= $form->field($model, 'people')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'is_open')->textInput(['maxlength' => true, 'value' => '1']) ?>
+                    <?= $form->field($model, 'is_open')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'description')->textInput(['value' => 'wqeqweqw e qweqwe qw qw']) ?>
+                    <?= $form->field($model, 'description')->textInput() ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'passing_percentage')->textInput(['maxlength' => true, 'value' => '44']) ?>
+                    <?= $form->field($model, 'passing_percentage')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'quest_holder')->textInput(['maxlength' => true, 'value' => '1']) ?>
+                    <?= $form->field($model, 'quest_holder')->textInput(['maxlength' => true]) ?>
                 </div>
             </div>
             <div class="row">
@@ -153,6 +153,27 @@ use yii\widgets\Pjax;
                             <?php endforeach; ?>
                         <?php } ?>
 
+                        <?php if (Yii::$app->request->post('time-price') && !$timePrice) { ?>
+                            <?php foreach (Yii::$app->request->post('time-price') as $key => $timePrice): ?>
+                                <tr>
+                                    <td>
+                                        <?= Html::input('text', "time-price[$key][time_value]",
+                                            $timePrice['time_value']
+                                            , ['class' => 'form-control']) ?>
+                                    </td>
+                                    <td>
+                                        <?= Html::input('text', "time-price[$key][price]",
+                                            $timePrice['price']
+                                            , ['class' => 'form-control']) ?>
+                                    </td>
+                                    <td>
+                                        <?= Html::input('text', "time-price[$key][weekend_price]",
+                                            $timePrice['weekend_price']
+                                            , ['class' => 'form-control']) ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php } ?>
                         </tbody>
                     </table>
                 </div>

@@ -100,9 +100,6 @@ class QuestController extends Controller
         $model = $this->findModel($id);
         $questTime = new QuestTime();
 
-        //var_dump($timePriceArray);
-        //$timePriceArray = [];
-
         $timePriceArray = QuestTime::find()->where(['quest_id' => $id])->orderBy('id')->all();
         if (Yii::$app->request->getIsPost()) {
 
@@ -112,22 +109,22 @@ class QuestController extends Controller
             $priceAverage = Yii::$app->request->post('price-average');
             $priceWeekend = Yii::$app->request->post('price-weekend');
 
-            if (!$timePriceArray)
-                if ($timeFrom && $timeTo && $timeRest)
-                    $timePriceArray = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest, $priceAverage, $priceWeekend);
-
-            if (Yii::$app->request->post('time-price')) {
-                if (QuestTime::saveQuestTimes(Yii::$app->request->post('time-price'), $id)) {
-                    Yii::$app->session->setFlash('success', "Расписание сеансов сохранено");
-                    $timePriceArray = QuestTime::find()->where(['quest_id' => $id])->orderBy('id')->all();
-                } else Yii::$app->session->setFlash('error', "Ну удалось сохранить расписание сеансов");
-            }
+            if ($timeFrom && $timeTo && $timeRest)
+                $timePriceArray = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest, $priceAverage, $priceWeekend);
+            else
+                if (Yii::$app->request->post('time-price')) {
+                    if (QuestTime::saveQuestTimes(Yii::$app->request->post('time-price'), $id)) {
+                        Yii::$app->session->setFlash('success', "Расписание сеансов сохранено");
+                        $timePriceArray = QuestTime::find()->where(['quest_id' => $id])->orderBy('id')->all();
+                    } else Yii::$app->session->setFlash('error', "Ну удалось сохранить расписание сеансов");
+                }
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             //return $this->redirect(['view', 'id' => $model->id]);
             return $this->render('update', [
                 'model' => $model,
+                'timePriceArray' => $timePriceArray
             ]);
         } else {
             return $this->render('update', [
