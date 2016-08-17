@@ -64,7 +64,7 @@ use yii\widgets\Pjax;
                 <h1>Quest Times span</h1>
 
                 <?php Pjax::begin(['id' => 'countries']); ?>
-                <?= Html::beginForm(['quest/create'], 'post', ['data-pjax' => 'true', 'class' => '']); ?>
+                <?= Html::beginForm(['quest/update?id=' . $model->id], 'post', ['data-pjax' => 'true', 'class' => '']); ?>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -119,7 +119,7 @@ use yii\widgets\Pjax;
 
                 <?= Html::endForm() ?>
 
-                <?= Html::beginForm(['quest/create'], 'post', ['data-pjax' => 'true']); ?>
+                <?= Html::beginForm(['quest/update?id=' . $model->id], 'post', ['data-pjax' => 'true']); ?>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -130,43 +130,29 @@ use yii\widgets\Pjax;
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if (Yii::$app->request->post('time-price')) { ?>
-                            <?php foreach (Yii::$app->request->post('time-price') as $key => $timePrice): ?>
-                                <tr>
-                                    <td>
-                                        <?= Html::input('text', "time-price[$key][time]", $timePrice['time'], ['class' => 'form-control']) ?>
-                                    </td>
-                                    <td>
-                                        <?= Html::input('text', "time-price[$key][averagePrice]",
-                                            $timePrice['averagePrice']
-                                            , ['class' => 'form-control']) ?>
-                                    </td>
-                                    <td>
-                                        <?= Html::input('text', "time-price[$key][weekendPrice]",
-                                            $timePrice['weekendPrice']
-                                            , ['class' => 'form-control']) ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php } else { ?>
+
+                        <?php if ($timePriceArray) { ?>
                             <?php foreach ($timePriceArray as $key => $timePrice): ?>
                                 <tr>
                                     <td>
-                                        <?= Html::input('text', "time-price[$key][time]", $timePrice, ['class' => 'form-control']) ?>
-                                    </td>
-                                    <td>
-                                        <?= Html::input('text', "time-price[$key][averagePrice]",
-                                            Yii::$app->request->post('price-average')
+                                        <?= Html::input('text', "time-price[$key][time_value]",
+                                            $timePrice['time_value']
                                             , ['class' => 'form-control']) ?>
                                     </td>
                                     <td>
-                                        <?= Html::input('text', "time-price[$key][weekendPrice]",
-                                            Yii::$app->request->post('price-weekend')
+                                        <?= Html::input('text', "time-price[$key][price]",
+                                            $timePrice['price']
+                                            , ['class' => 'form-control']) ?>
+                                    </td>
+                                    <td>
+                                        <?= Html::input('text', "time-price[$key][weekend_price]",
+                                            $timePrice['weekend_price']
                                             , ['class' => 'form-control']) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php } ?>
+
                         </tbody>
                     </table>
                 </div>

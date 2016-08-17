@@ -55,9 +55,46 @@ class QuestTime extends \yii\db\ActiveRecord
         ];
     }
 
-    public function generateTimeLine($from, $to, $rest)
+    public function generateTimeLine($from, $to, $rest, $priceAverage, $priceWeekend)
     {
-        return $this->fillTimeArray($from, $to, $rest);
+        //return $this->fillTimeArray($from, $to, $rest);
+        $newDate = null;
+        $timeArray = [];
+        $restArray = explode(':', $rest);
+        if (strpos($rest, ':') !== false) {
+
+            $newDate = strtotime('+' . $restArray[0] . ' hours', $from);
+            $newDate = strtotime('+' . $restArray[1] . ' minutes', $newDate);
+
+            while ($to >= $newDate) {
+                //array_push($timeArray, date("H:i", $newDate));
+                array_push($timeArray, [
+                    'time_value' => date("H:i", $newDate),
+                    'price' => $priceAverage,
+                    'weekend_price' => $priceWeekend,
+                ]);
+
+                $newDate = strtotime('+' . $restArray[0] . ' hours', $newDate);
+                $newDate = strtotime('+' . $restArray[1] . ' minutes', $newDate);
+            }
+
+        } else {
+
+            $newDate = strtotime('+' . $restArray[0] . ' minutes', $from);
+
+            while ($to >= $newDate) {
+                //array_push($timeArray, date("H:i", $newDate));
+                array_push($timeArray, [
+                    'time_value' => date("H:i", $newDate),
+                    'price' => $priceAverage,
+                    'weekend_price' => $priceWeekend,
+                ]);
+
+                $newDate = strtotime('+' . $restArray[0] . ' minutes', $newDate);
+            }
+        }
+
+        return $timeArray;
     }
 
     public function fillTimeArray($from, $to, $rest)
@@ -91,16 +128,15 @@ class QuestTime extends \yii\db\ActiveRecord
     }
 
     //public static function saveQuestTimes($timeArray, $priceArray, $questId)
-    public static function saveQuestTimes($timeArray)
+    public static function saveQuestTimes($timeArray, $questId)
     {
-        $questId = '1';
-
+        QuestTime::deleteAll(['quest_id' => $questId]);
         $sql = "INSERT INTO quests_times (time_value, weekend_price, price,  quest_id) values ";
         $values = "";
         for ($i = 0; $i < count($timeArray); $i++) {
-            $values .= "('" . str_replace(':', '.', $timeArray[$i]['time'])
-                . "','" . $timeArray[$i]['weekendPrice']
-                . "','" . $timeArray[$i]['averagePrice'] . "','" . $questId . "'),";
+            $values .= "('" . str_replace(':', '.', $timeArray[$i]['time_value'])
+                . "','" . $timeArray[$i]['weekend_price']
+                . "','" . $timeArray[$i]['price'] . "','" . $questId . "'),";
         }
         $sql .= rtrim($values, ",");
 
