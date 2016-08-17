@@ -18,7 +18,7 @@ class QuestSearch extends Quest
     public function rules()
     {
         return [
-            [['id', 'price_average', 'price_holiday', 'people'], 'integer'],
+            [['id', 'people'], 'integer'],
             [['name', 'updated_at', 'created_at'], 'safe'],
         ];
     }
@@ -60,8 +60,6 @@ class QuestSearch extends Quest
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'price_average' => $this->price_average,
-            'price_holiday' => $this->price_holiday,
             'people' => $this->people,
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,

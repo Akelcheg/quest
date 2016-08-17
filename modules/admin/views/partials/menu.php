@@ -1,15 +1,19 @@
+<?php
+use yii\helpers\Html;
+
+?>
 <div class="col-sm-3">
     <!-- Left column -->
     <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Tools</strong></a>
 
     <hr>
-
+    вхуярить сюда список броней на сегодня
     <ul class="nav nav-stacked">
         <li class="nav-header"><a href="#" data-toggle="collapse" data-target="#userMenu">Квесты <i
                     class="glyphicon glyphicon-chevron-right"></i></a>
             <ul class="nav nav-stacked collapse" id="userMenu">
-                <li class="active"><a href="/admin/quest"><i class="glyphicon glyphicon-home"></i> Все квесты</a></li>
-                <li><a href="/admin/quest/create"><i class="glyphicon glyphicon-envelope"></i> Создать </a></li>
+                <li><?= Html::a('<i class="glyphicon glyphicon-list"></i> Список квестов', ['quest/'], ['class' => '']) ?></li>
+                <li><?= Html::a('<i class="glyphicon glyphicon-plus"></i> Создать квест', ['quest/create'], ['class' => '']) ?></li>
 
             </ul>
         </li>

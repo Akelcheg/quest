@@ -91,13 +91,16 @@ class QuestTime extends \yii\db\ActiveRecord
     }
 
     //public static function saveQuestTimes($timeArray, $priceArray, $questId)
-    public static function saveQuestTimes($timeArray, $weekendPrice, $questId)
+    public static function saveQuestTimes($timeArray)
     {
-        //$weekendPrice = Yii::$app->request->post('weekendPrice');
+        $questId = '1';
+
         $sql = "INSERT INTO quests_times (time_value, weekend_price, price,  quest_id) values ";
         $values = "";
         for ($i = 0; $i < count($timeArray); $i++) {
-            $values .= "('" . str_replace(':', '.', $timeArray[$i]) . "','" . $weekendPrice . "','" . $priceArray[$i] . "','" . $questId . "'),";
+            $values .= "('" . str_replace(':', '.', $timeArray[$i]['time'])
+                . "','" . $timeArray[$i]['weekendPrice']
+                . "','" . $timeArray[$i]['averagePrice'] . "','" . $questId . "'),";
         }
         $sql .= rtrim($values, ",");
 

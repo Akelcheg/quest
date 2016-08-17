@@ -69,28 +69,30 @@ class QuestController extends Controller
         $timePriceArray = [];
         if (!Yii::$app->request->post('time-price'))
             //$timePriceArray = [];
-            $x =Yii::$app->request->post('time-price');
+            $x = Yii::$app->request->post('time-price');
         //else $timePriceArray = Yii::$app->request->post('time-price');
 
         //var_dump(Yii::$app->request->post());
         //$x = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
         //if (Yii::$app->request->post('time-rest') && Yii::$app->request->post('time-from') && Yii::$app->request->post('time-from')) {
-        $x = '1';
+
+
         if (Yii::$app->request->getIsPost()) {
 
             $timeFrom = Yii::$app->request->post('time-from');
             $timeTo = Yii::$app->request->post('time-to');
             $timeRest = Yii::$app->request->post('time-rest');
 
-            /*$averagePrice = Yii::$app->request->post('price-average');
-            $weekendPrice = Yii::$app->request->post('price-weekend');*/
-
             if ($timeFrom && $timeTo && $timeRest)
                 $timePriceArray = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
 
             if (Yii::$app->request->post('time-price')) {
-                $x = Yii::$app->request->post('time-price');
+                //$x = Yii::$app->request->post('time-price');
+                if (QuestTime::saveQuestTimes(Yii::$app->request->post('time-price')))
+                    Yii::$app->session->setFlash('success', "Расписание сеансов сохранено");
+                else Yii::$app->session->setFlash('error', "Ну удалось сохранить расписание сеансов");
             }
+
 
         }
 
@@ -101,8 +103,7 @@ class QuestController extends Controller
             return $this->render('create', [
                 'model' => $model,
                 'questTime' => $questTime,
-                'timePriceArray' => $timePriceArray,
-                'x' => $x
+                'timePriceArray' => $timePriceArray
             ]);
         }
     }
@@ -125,6 +126,7 @@ class QuestController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'timePriceArray' => QuestTime::findAll(['quest_id'=>$id])
             ]);
         }
     }
