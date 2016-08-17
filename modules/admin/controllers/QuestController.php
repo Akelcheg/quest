@@ -66,18 +66,34 @@ class QuestController extends Controller
     {
         $model = new Quest();
         $questTime = new QuestTime();
+        $timePriceArray = [];
+        if (!Yii::$app->request->post('time-price'))
+            //$timePriceArray = [];
+            $x =Yii::$app->request->post('time-price');
+        //else $timePriceArray = Yii::$app->request->post('time-price');
 
-        $s = '1';
+        //var_dump(Yii::$app->request->post());
+        //$x = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
+        //if (Yii::$app->request->post('time-rest') && Yii::$app->request->post('time-from') && Yii::$app->request->post('time-from')) {
+        $x = '1';
+        if (Yii::$app->request->getIsPost()) {
 
-        $timeFrom = Yii::$app->request->post('time-from');
-        $timeTo = Yii::$app->request->post('time-to');
-        $timeRest = Yii::$app->request->post('time-rest');
+            $timeFrom = Yii::$app->request->post('time-from');
+            $timeTo = Yii::$app->request->post('time-to');
+            $timeRest = Yii::$app->request->post('time-rest');
 
-        $x = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
+            /*$averagePrice = Yii::$app->request->post('price-average');
+            $weekendPrice = Yii::$app->request->post('price-weekend');*/
 
-        if (Yii::$app->request->post('time-from') && Yii::$app->request->post('time-from')) {
-            $s = $x;
+            if ($timeFrom && $timeTo && $timeRest)
+                $timePriceArray = $questTime->generateTimeLine(strtotime($timeFrom), strtotime($timeTo), $timeRest);
+
+            if (Yii::$app->request->post('time-price')) {
+                $x = Yii::$app->request->post('time-price');
+            }
+
         }
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -85,7 +101,8 @@ class QuestController extends Controller
             return $this->render('create', [
                 'model' => $model,
                 'questTime' => $questTime,
-                'stringHash' => $s,
+                'timePriceArray' => $timePriceArray,
+                'x' => $x
             ]);
         }
     }

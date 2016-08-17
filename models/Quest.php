@@ -9,9 +9,11 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
- * @property integer $price_average
- * @property integer $price_holiday
  * @property integer $people
+ * @property integer $is_open
+ * @property string $description
+ * @property integer $passing_percentage
+ * @property integer $quest_holder
  * @property string $updated_at
  * @property string $created_at
  */
@@ -31,8 +33,9 @@ class Quest extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'price_average', 'price_holiday', 'people'], 'required'],
-            [['price_average', 'price_holiday', 'people'], 'integer'],
+            [['name', 'people', 'is_open', 'description', 'passing_percentage', 'quest_holder'], 'required'],
+            [['people', 'is_open', 'passing_percentage', 'quest_holder'], 'integer'],
+            [['description'], 'string'],
             [['updated_at', 'created_at'], 'safe'],
             [['name'], 'string', 'max' => 255],
         ];
@@ -46,9 +49,11 @@ class Quest extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'price_average' => 'Price Average',
-            'price_holiday' => 'Price Holiday',
             'people' => 'People',
+            'is_open' => 'Is Open',
+            'description' => 'Description',
+            'passing_percentage' => 'Passing Percentage',
+            'quest_holder' => 'Quest Holder',
             'updated_at' => 'Updated At',
             'created_at' => 'Created At',
         ];
