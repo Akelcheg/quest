@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'http://fonts.googleapis.com/css?family=Open+Sans'
     ];
     public $js = [
+        'js/libs/bootstrap.min.js',
         'js/app.js',
         'js/models/user.js',
         'js/models/quest.js',
