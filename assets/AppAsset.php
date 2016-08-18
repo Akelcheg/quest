@@ -13,7 +13,8 @@ class AppAsset extends AssetBundle
         'css/style.css',
         'css/slider.css',
         'css/helpers.css',
-        'css/timeline.css'
+        'css/timeline.css',
+        'http://fonts.googleapis.com/css?family=Open+Sans'
     ];
     public $js = [
         'js/app.js',
