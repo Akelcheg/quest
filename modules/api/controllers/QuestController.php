@@ -34,4 +34,14 @@ class QuestController extends Controller
     {
         return Quest::find()->orderBy('id desc')->all();
     }
+
+    public function actionDesc($quest_name)
+    {
+        $questId = $quest_name;
+
+        return [
+            'data' => Quest::findOne(['id' => $questId]),
+            'booking_data' => Quest::getQuestSchedule($questId)
+        ];
+    }
 }

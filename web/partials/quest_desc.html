@@ -1,253 +1,65 @@
-<div class="container-fluid">
-    <jssor-slider></jssor-slider>
-</div>
+<jssor-slider></jssor-slider>
 
-<div class="container m20">
-    <div class="row">
 
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-7 col-md-offset-1">
-                    <h3>Lorem ipsum dolor sidad amet ipsum</h3>
-                    <p style="text-align: justify;color: #1f2225; font-size: 18px;">You are group of rescuers search
-                        engines. Many weeks you were investigating a mysterious case. It all started when the couple
-                        Smiths adopted three children - twins and two ten-year-old their little sister. These children
-                        were found in an abandoned sewage and nothing about himself remembered. After a few happy months
-                        in the Smith family, one night, all three of them disappeared. Without waiting for the police
-                        rushed to search for the Smiths, and traces of children's feet on the wet ground led them to an
-                        abandoned reservoir. Since then, no one saw no children or their foster parents. And now you're
-                        standing at the entrance to the collector, and you have to go down and find out what secrets it
-                        hides.</p>
+<div class="container" style="padding-left: 0; padding-right: 0; margin-top: 50px; margin-bottom: 50px;">
 
-                    <div class="quest-rules">
-                        <p>Minimum age of participants: 16 years.</p>
-                        <p>Please come on in quest of comfortable shoes without heels</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-md-offset-1" style="margin:0;">
-                    <div class="quest-price-div">
-                        <p>666 ГРН</p>
-                    </div>
-                    <div class="quest-params-div">
-                        <div style="display:table; margin:0 auto;">
+    <!--
+        <div class="container-fluid" style="margin-left: 0; margin-right: 0;">
+            <jssor-slider></jssor-slider>
+        </div>
+    -->
 
-                            <p><span><i class="fa fa-users" aria-hidden="true"></i></span> 2 - 4 Человека</p>
-                            <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> 60 Минут</p>
-                            <p><span>
+    <div class="row" style="margin-right: 0; margin-left: 0;">
+
+        <div class="col-md-7 col-md-offset-1">
+            <h3>{{quest['name']}}</h3>
+            <p style="text-align: left;color: #1f2225; font-size: 1.2em; line-height: 200%;">{{quest['description']}}</p>
+
+            <div class="quest-rules">
+                <p>Minimum age of participants: 16 years.</p>
+                <p>Please come on in quest of comfortable shoes without heels</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-md-offset-1" style="margin:0;">
+            <div class="quest-price-div">
+                <p>666 ГРН</p>
+            </div>
+            <div class="quest-params-div">
+                <div style="display:table; margin:0 auto;">
+
+                    <p><span><i class="fa fa-users" aria-hidden="true"></i></span> 2 - 4 Человека</p>
+                    <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span> 60 Минут</p>
+                    <p><span>
 								<i class="fa fa-location-arrow" aria-hidden="true"></i>
 							</span> Водопроводная 1 А</p>
-                        </div>
-                        <button type="button" class="btn btn-danger">ЗАБРОНИРОВАТЬ</button>
-                    </div>
                 </div>
+                <button type="button" class="btn btn-danger">ЗАБРОНИРОВАТЬ</button>
             </div>
         </div>
 
 
     </div>
+
 </div>
 
-<div id="map"></div>
+<div my-map=""></div>
 
-<div class="container-fluid" style="background-color: white;">
-    <div class="row seven-cols">
+<div class="container-fluid" style="background-color: white;padding-left: 0; padding-right: 0;">
+    <div class="row seven-cols" style="margin-left: 0; margin-right: 0;">
 
         <div class="container">
             <h3 style="text-align:center;">Август 2015</h3>
-            <div class="row">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+
                 <!-- <div class="calendar-date" style="width:12,3%; margin-left: 10px; margin-top: 10px; float: left; border: 5px solid #ebf2f6; padding: 15px; text-align:center;"> -->
-                <div class="col-md-1 calendar">
+                <div class="col-md-1 calendar" ng-repeat="bookingDate in booking">
                     <h3>01</h3>
                     <p>Available: 1</p>
                     <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
                 </div>
-                <div class="col-md-1 calendar">
-                    <h3>02</h3>
-                    <p>Available: 9</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar current">
-                    <h3>03</h3>
-                    <p>Available: 12</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>04</h3>
-                    <p>Available: 3</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>05</h3>
-                    <p>Available: 9</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>06</h3>
-                    <p>Available: 6</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar blocked">
-                    <h3>07</h3>
-                    <p>Available: 0</p>
-                    <button type="button" class="book">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>08</h3>
-                    <p>Available: 3</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>09</h3>
-                    <p>Available: 3</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>10</h3>
-                    <p>Available: 9</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>11</h3>
-                    <p>Available: 2</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar blocked">
-                    <h3>12</h3>
-                    <p>Available: 0</p>
-                    <button type="button" class="book">БРОНИРОВАТЬ</button>
-                </div>
-
-                <div class="col-md-1 calendar">
-                    <h3>13</h3>
-                    <p>Available: 1</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-                <div class="col-md-1 calendar">
-                    <h3>14</h3>
-                    <p>Available: 9</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
-                </div>
-
             </div>
         </div>
 
 
     </div>
 </div>
-
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Выберите время на которое хотите прийти</h4>
-            </div>
-            <div class="modal-body">
-                <h4>04 ДЕКАБРЯ - ЧЕТВЕРГ </h4>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                <p style="font-size:16px;color:#6c7176;">12:30</p>
-                            </label>
-                        </div>
-
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                <p style="font-size:16px;color:#6c7176;">13:00</p>
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                <p style="font-size:16px;color:#6c7176;">14:00</p>
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                <p style="font-size:16px;color:#6c7176;">15:00</p>
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                <p style="font-size:16px;color:#6c7176;">19:00</p>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 style="color: #fb383c;">Правила</h4>
-                        <div class="quest-rules">
-                            <p>Minimum age of participants: 16 years.</p>
-                            <p>Please come on in quest of comfortable shoes without heels</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-danger">БРОНИРОВАТЬ</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-
-    function initMap() {
-        var styles = [
-            {
-                "stylers": [
-                    {
-                        "hue": "#ff1a00"
-                    },
-                    {
-                        "invert_lightness": true
-                    },
-                    {
-                        "saturation": -100
-                    },
-                    {
-                        "lightness": 33
-                    },
-                    {
-                        "gamma": 0.5
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#2D333C"
-                    }
-                ]
-            }
-        ];
-        var styledMap = new google.maps.StyledMapType(styles,
-                {name: "Styled Map"});
-
-
-        var mapOptions = {
-            zoom: 12,
-            scrollwheel: false,
-            center: new google.maps.LatLng(55.6468, 37.581),
-            mapTypeControlOptions: {
-                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-            }
-        };
-        var map = new google.maps.Map(document.getElementById('map'),
-                mapOptions);
-
-        map.mapTypes.set('map_style', styledMap);
-        map.setMapTypeId('map_style');
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAORdNzOZKnybtZPUaEZhJivJUcd565Nmo&signed_in=true&callback=initMap"></script>

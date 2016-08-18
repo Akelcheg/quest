@@ -7,9 +7,13 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 templateUrl: 'partials/index.html',
                 controller: 'indexController'
             })
-            .when('/quests', {
+            /*.when('/quests', {
+             templateUrl: 'partials/quest_desc.html',
+             controller: 'indexController'
+             })*/
+            .when('/quest/:quest_name', {
                 templateUrl: 'partials/quest_desc.html',
-                controller: 'indexController'
+                controller: 'questController'
             })
             .when('/contact', {
                 templateUrl: 'partials/contact.html',
@@ -33,9 +37,9 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 controller: 'userController'
             })
 
-            /*.otherwise({
-                templateUrl: 'partials/404.html'
-            });*/
+        /*.otherwise({
+         templateUrl: 'partials/404.html'
+         });*/
 
         $httpProvider.interceptors.push('authInterceptor');
         $locationProvider.html5Mode(true);

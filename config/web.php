@@ -62,7 +62,7 @@ $config = [
                 //'' => 'site/index',
                 //'<action:login>' => 'site/<action>',
                 /*['class' => 'yii\rest\UrlRule', 'controller' => 'api/rate'],*/
-
+                'api/quest/desc/<quest_name>' => 'api/quest/desc',
             ]
         ],
     ],

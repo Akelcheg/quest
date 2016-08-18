@@ -1,9 +1,13 @@
 questApp.directive('jssorSlider', [function () {
     return {
         restrict: 'E',
+        /*scope: {
+            quest_name: '@quest_name'
+        },*/
         replace: true,
         templateUrl: 'partials/jssor-slider.html',
         link: function (scope, elem) {
+
             var jssor_1_SlideoTransitions = [
                 [{b: 5500, d: 3000, o: -1, r: 240, e: {r: 2}}],
                 [{b: -1, d: 1, o: -1, c: {x: 51.0, t: -51.0}}, {
