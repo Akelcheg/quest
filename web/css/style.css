@@ -149,8 +149,8 @@ p.reality-tasks-header p {
 .quest-info .quest-price-container {
     border-radius: 50%;
     border: 1px solid white;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
 }
 
 .quest-info .additional-info {
@@ -163,9 +163,9 @@ p.reality-tasks-header p {
 
 .quest-info .quest-price {
     color: white;
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
-    line-height: 150px;
+    line-height: 130px;
 }
 
 .quest-info h3 {
