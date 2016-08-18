@@ -110,7 +110,7 @@ img.main-key-image {
 }
 
 p.reality-tasks {
-    font-size: 16px;
+    font-size: 1.1em;
     color: #969fa7;
 }
 
@@ -137,8 +137,9 @@ p.reality-tasks-header p {
 }
 .quest-info .description p {
     /*margin-top: 25px;*/
-    font-size: 16px;
     /*min-height: 80px;*/
+    font-size: 1.1em;
+    color: #cfcfcf;
 }
 
 .quest-info {
@@ -149,23 +150,20 @@ p.reality-tasks-header p {
 .quest-info .quest-price-container {
     border-radius: 50%;
     border: 1px solid white;
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
 }
 
 .quest-info .additional-info {
-    margin-top: 25px;
-}
-
-.quest-info .select-game-button {
-    margin-top: 25px;
+    margin-top: 10px;
+    color: #cfcfcf;
 }
 
 .quest-info .quest-price {
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
-    line-height: 130px;
+    line-height: 100px;
 }
 
 .quest-info h3 {

@@ -26,11 +26,13 @@ use yii\widgets\Pjax;
                 // more ActiveForm options
             ]); ?>
 
+            <?php if ($model->isNewRecord) { ?>
             <div class="row">
                 <div class="col-md-6">
                     <?= $form->field($imageModel, 'imageFile')->fileInput() ?>
                 </div>
             </div>
+            <?php } ?>
 
             <div class="row">
 
@@ -44,13 +46,15 @@ use yii\widgets\Pjax;
                     <?= $form->field($model, 'is_open')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
-                    <?= $form->field($model, 'description')->textInput() ?>
-                </div>
-                <div class="col-md-3">
                     <?= $form->field($model, 'passing_percentage')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-3">
                     <?= $form->field($model, 'quest_holder')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <?= $form->field($model, 'description')->textarea() ?>
                 </div>
             </div>
             <div class="row">

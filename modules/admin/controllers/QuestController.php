@@ -101,7 +101,8 @@ class QuestController extends Controller
     {
         $model = $this->findModel($id);
         $questTime = new QuestTime();
-
+        $imageModel = new Image();
+        $imageModel->imageFile = 'dsadas';
         $timePriceArray = QuestTime::find()->where(['quest_id' => $id])->orderBy('id')->all();
         if (Yii::$app->request->getIsPost()) {
 
@@ -126,13 +127,15 @@ class QuestController extends Controller
             //return $this->redirect(['view', 'id' => $model->id]);
             return $this->render('update', [
                 'model' => $model,
-                'timePriceArray' => $timePriceArray
+                'timePriceArray' => $timePriceArray,
+                'imageModel' => $imageModel
             ]);
         } else {
             return $this->render('update', [
                 'model' => $model,
                 //'timePriceArray' => QuestTime::findAll(['quest_id'=>$id])
-                'timePriceArray' => $timePriceArray
+                'timePriceArray' => $timePriceArray,
+                'imageModel' => $imageModel
             ]);
         }
     }
