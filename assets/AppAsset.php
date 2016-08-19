@@ -14,10 +14,12 @@ class AppAsset extends AssetBundle
         'css/slider.css',
         'css/helpers.css',
         'css/timeline.css',
+        'css/check.css',
         'http://fonts.googleapis.com/css?family=Open+Sans'
     ];
     public $js = [
         'js/libs/bootstrap.min.js',
+        //'js/libs/check.js',
         'js/app.js',
         'js/models/user.js',
         'js/models/quest.js',

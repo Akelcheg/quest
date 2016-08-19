@@ -2,8 +2,8 @@ questApp.directive('jssorSlider', [function () {
     return {
         restrict: 'E',
         /*scope: {
-            quest_name: '@quest_name'
-        },*/
+         quest_name: '@quest_name'
+         },*/
         replace: true,
         templateUrl: 'partials/jssor-slider.html',
         link: function (scope, elem) {

@@ -13,7 +13,8 @@
 
         <div class="col-md-7 col-md-offset-1">
             <h3>{{quest['name']}}</h3>
-            <p style="text-align: left;color: #1f2225; font-size: 1.2em; line-height: 200%;">{{quest['description']}}</p>
+            <p style="text-align: left;color: #1f2225; font-size: 1.2em; line-height: 200%;">
+                {{quest['description']}}</p>
 
             <div class="quest-rules">
                 <p>Minimum age of participants: 16 years.</p>
@@ -55,11 +56,50 @@
                 <div class="col-md-1 calendar" ng-repeat="bookingDate in booking">
                     <h3>01</h3>
                     <p>Available: 1</p>
-                    <button type="button" class="book" data-toggle="modal" data-target="#myModal">БРОНИРОВАТЬ</button>
+                    <button type="button" class="book" ng-click="showBookingModal(bookingDate)">БРОНИРОВАТЬ</button>
                 </div>
             </div>
         </div>
-
-
     </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="booking_modal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Бронь на "{{quest.name}}"</h4>
+                </div>
+                <div class="modal-body">
+                    {{modalBookingTime['date']}}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+
+                                <div class="checkbox checkbox-danger" ng-repeat="time in modalBookingTime['time']">
+                                    <input id="checkbox{{$index+1}}" ng-model="time.selected" type="checkbox" ng-click="updateSelection($index, modalBookingTime['time'])">
+                                    <label for="checkbox{{$index+1}}">
+                                        {{time['value']}}
+                                        {{time}}
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                2
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Забронировать</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
 </div>
+

@@ -38,6 +38,7 @@ class QuestController extends Controller
      */
     public function actionIndex()
     {
+        var_dump(date("h:i:sa"));
         $searchModel = new QuestSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
