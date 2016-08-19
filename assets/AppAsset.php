@@ -19,7 +19,6 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/libs/bootstrap.min.js',
-        //'js/libs/check.js',
         'js/app.js',
         'js/models/user.js',
         'js/models/quest.js',
