@@ -53,12 +53,12 @@
             <div class="row" style="margin-left: 0; margin-right: 0;">
 
                 <!-- <div class="calendar-date" style="width:12,3%; margin-left: 10px; margin-top: 10px; float: left; border: 5px solid #ebf2f6; padding: 15px; text-align:center;"> -->
-                <div class="col-md-1 calendar" ng-repeat="bookingDate in booking"
+                <div class="col-md-1 calendar" ng-repeat="bookingDate in bookingData"
                      ng-class="{'blocked' : availableTimesCount(bookingDate) == 0}">
 
 
-                        <p class="date">{{bookingDate['display_date']['day']}}</p>
-                        <p class="date">{{bookingDate['display_date']['month']}}</p>
+                    <p class="date">{{bookingDate['display_date']['day']}}</p>
+                    <p class="date">{{bookingDate['display_date']['month']}}</p>
 
 
                     <div ng-hide="availableTimesCount(bookingDate)==0">
@@ -71,8 +71,8 @@
                     </div>
 
                     <a type="button" class="btn quest-button-b-sm"
-                            ng-disabled="availableTimesCount(bookingDate)==0"
-                            ng-click="showBookingModal(bookingDate,availableTimesCount(bookingDate))">БРОНИРОВАТЬ
+                       ng-disabled="availableTimesCount(bookingDate)==0"
+                       ng-click="showBookingModal(bookingDate,availableTimesCount(bookingDate))">БРОНИРОВАТЬ
                     </a>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Бронь на "{{quest.name}}"</h4>
                 </div>
-                {{userBooking}}
+
                 <div class="modal-body">
                     {{modalBookingTime['date']}}
                     <div class="row">
@@ -109,23 +109,29 @@
                             </div>
                             <div class="col-md-7">
                                 <form class="booking-form">
-                                    <div class="form-group">
+                                    <!--<div class="form-group">
 
                                         <input type="email" class="form-control"
+                                               ng-model="quest.userName"
                                                placeholder="Email">
+                                    </div>-->
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" ng-model="booking.userName"
+                                               placeholder="Ваше имя">
                                     </div>
                                     <div class="form-group">
 
-                                        <input type="email" class="form-control"
-                                               placeholder="Email">
+                                        <input type="text" class="form-control"
+                                               name="user_phone"
+                                               ng-model="booking.userPhone"
+                                               placeholder="Телефон для связи">
                                     </div>
                                     <div class="form-group">
-
-                                        <input type="email" class="form-control"
-                                               placeholder="Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="5" cols="40"></textarea>
+                                        <textarea class="form-control"
+                                                  ng-model="booking.userRequest"
+                                                  rows="5"
+                                                  cols="40"></textarea>
                                     </div>
                                 </form>
 

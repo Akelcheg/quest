@@ -2,14 +2,10 @@
 
 questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'booking', function ($scope, $routeParams, quest, booking) {
 
-    /*$('#booking_modal').on('hidden.bs.modal', function () {
-     booking = {};
-     });*/
-
     angular.extend($scope, {
-        //userBooking: {},
+        booking: booking,
         quest: null,
-        booking: null,
+        bookingData: null,
         modalBookingTime: []
 
     });
@@ -17,7 +13,7 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
     quest.getQuestData($routeParams.quest_name, function (questsObj) {
 
         $scope.quest = questsObj['data'];
-        $scope.booking = questsObj['booking_data'];
+        $scope.bookingData = questsObj['booking_data'];
 
         //$scope.modalBookingTime = $scope.booking[0];
     });
@@ -35,11 +31,12 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
             return count;
         },
 
-        showBookingModal: function (bookingTimeArray,availableTimes) {
-            if (availableTimes>0) {
+        showBookingModal: function (bookingTimeArray, availableTimes) {
+            if (availableTimes > 0) {
                 $scope.modalBookingTime = bookingTimeArray;
                 $('#booking_modal').modal('show');
-            } return false;
+            }
+            return false;
         },
 
         updateSelection: function (position, timeArray) {

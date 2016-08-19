@@ -20,11 +20,17 @@ questApp.factory('booking', ['$http', '$location', '$window', function ($http, $
     };
 
     booking.clearBooking = function () {
-
+        this.time = '';
+        this.is_booked = '';
+        this.price = '';
+        this.userPhone = '';
+        this.userName = '';
+        this.userRequest = '';
     };
 
     booking.bookTime = function () {
-        console.log ("booking");
+        console.log("booking");
+        console.log(this);
     };
 
     return booking;
