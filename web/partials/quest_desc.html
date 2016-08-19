@@ -53,11 +53,27 @@
             <div class="row" style="margin-left: 0; margin-right: 0;">
 
                 <!-- <div class="calendar-date" style="width:12,3%; margin-left: 10px; margin-top: 10px; float: left; border: 5px solid #ebf2f6; padding: 15px; text-align:center;"> -->
-                <div class="col-md-1 calendar" ng-repeat="bookingDate in booking">
-                    <p class="date">{{bookingDate['display_date']['day']}}</p>
-                    <p class="date">{{bookingDate['display_date']['month']}}</p>
-                    <p>Доступно : {{availableTimesCount(bookingDate)}}</p>
-                    <button type="button" class="book" ng-click="showBookingModal(bookingDate)">БРОНИРОВАТЬ</button>
+                <div class="col-md-1 calendar" ng-repeat="bookingDate in booking"
+                     ng-class="{'blocked' : availableTimesCount(bookingDate) == 0}">
+
+
+                        <p class="date">{{bookingDate['display_date']['day']}}</p>
+                        <p class="date">{{bookingDate['display_date']['month']}}</p>
+
+
+                    <div ng-hide="availableTimesCount(bookingDate)==0">
+                        <!--<p class="date">Доступно : {{availableTimesCount(bookingDate)}}</p>-->
+                        <p class="date">{{bookingDate['display_date']['day_name']}}</p>
+                    </div>
+
+                    <div ng-show="availableTimesCount(bookingDate)==0">
+                        <p style="color: #fb383c;">Брони нет</p>
+                    </div>
+
+                    <a type="button" class="btn quest-button-b-sm"
+                            ng-disabled="availableTimesCount(bookingDate)==0"
+                            ng-click="showBookingModal(bookingDate,availableTimesCount(bookingDate))">БРОНИРОВАТЬ
+                    </a>
                 </div>
             </div>
         </div>

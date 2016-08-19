@@ -35,9 +35,11 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
             return count;
         },
 
-        showBookingModal: function (bookingTimeArray) {
-            $scope.modalBookingTime = bookingTimeArray;
-            $('#booking_modal').modal('show');
+        showBookingModal: function (bookingTimeArray,availableTimes) {
+            if (availableTimes>0) {
+                $scope.modalBookingTime = bookingTimeArray;
+                $('#booking_modal').modal('show');
+            } return false;
         },
 
         updateSelection: function (position, timeArray) {
