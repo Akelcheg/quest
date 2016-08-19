@@ -34,7 +34,7 @@ class TimeReserved extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['time_value', 'date', 'price', 'quest_id', 'user_id', 'created_at', 'updated_at'], 'required'],
+            [['time_value', 'date', 'price', 'quest_id', 'user_id'], 'required'],
             [['time_value'], 'number'],
             [['date'], 'safe'],
             [['price', 'quest_id', 'user_id', 'created_at', 'updated_at'], 'integer']
@@ -70,18 +70,14 @@ class TimeReserved extends \yii\db\ActiveRecord
         and `date` > CURDATE()')->queryAll()[0]['bookings'] >= 2;
     }
 
-    public function bookQuestTime($time, $date, $quest_id, $price)
+    public function bookQuestTime($bookingObj)
     {
-        $bookTime = new TimeReserved();
-        $bookTime->time_value = $time;
-        $bookTime->date = $date;
-        $bookTime->price = $price;
-        $bookTime->user_id = Yii::$app->user->id;
-        $bookTime->quest_id = $quest_id;
-        $bookTime->created_at = '123';
-        $bookTime->updated_at = '123';
-        if ($bookTime->save()) return true;
-        return false;
+        $this->time_value = $bookingObj['time'];
+        $this->date = $bookingObj['date'];;
+        $this->price = $bookingObj['price'];
+        $this->user_id = '1';
+        $this->quest_id = $bookingObj['quest_id'];
+        return $this->save();
     }
 
     public function getUserBookedQuests()

@@ -11,15 +11,9 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
     });
 
     quest.getQuestData($routeParams.quest_name, function (questsObj) {
-
         $scope.quest = questsObj['data'];
         $scope.bookingData = questsObj['booking_data'];
-
-        //$scope.modalBookingTime = $scope.booking[0];
     });
-
-
-    //$('#booking_modal').modal('show');
 
     angular.extend($scope, {
 
@@ -51,9 +45,18 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
             });
         },
 
-        bookTime: function () {
-            //if (booking.isTimeBooked()) booking.showBookingError("Время уже забронировано");
-            booking.bookTime();
+        bookTime: function (modalBookingTime) {
+            booking.date = modalBookingTime['date'];
+            booking.quest_id = $scope.quest['id'];
+            booking.bookTime(function (result) {
+                if (result == true) {
+                    quest.getQuestData($routeParams.quest_name, function (questsObj) {
+                        $('#booking_modal').modal('hide');
+                        $scope.quest = questsObj['data'];
+                        $scope.bookingData = questsObj['booking_data'];
+                    });
+                }
+            });
             return true;
         }
 

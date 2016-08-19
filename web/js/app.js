@@ -2,6 +2,10 @@ var questApp = angular.module('questApp', ['ngRoute']);
 
 questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
     function ($routeProvider, $httpProvider, $locationProvider) {
+
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+        $httpProvider.defaults.headers.post['X-CSRF-Token'] = $('meta[name="csrf-token"]').attr("content");
+
         $routeProvider
             .when('/', {
                 templateUrl: 'partials/index.html',

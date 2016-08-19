@@ -16,8 +16,8 @@ class m160818_170435_custom_dates extends Migration
             'quest_id' => Schema::TYPE_INTEGER,
             'is_weekend' => Schema::TYPE_INTEGER,
 
-            'updated_at' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
-            'created_at' => 'timestamp'
+            'updated_at' => $this->timestamp() . ' DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP',
+            'created_at' => $this->timestamp() . ' DEFAULT NOW()'
         ]);
     }
 

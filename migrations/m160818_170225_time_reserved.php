@@ -15,8 +15,8 @@ class m160818_170225_time_reserved extends Migration
             'price' => Schema::TYPE_INTEGER . '(5) NOT NULL',
             'quest_id' => Schema::TYPE_INTEGER . ' NOT NULL',
             'user_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'updated_at' => $this->timestamp() . ' DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP',
+            'created_at' => $this->timestamp() . ' DEFAULT NOW()'
         ]);
     }
 
