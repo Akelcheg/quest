@@ -54,8 +54,9 @@
 
                 <!-- <div class="calendar-date" style="width:12,3%; margin-left: 10px; margin-top: 10px; float: left; border: 5px solid #ebf2f6; padding: 15px; text-align:center;"> -->
                 <div class="col-md-1 calendar" ng-repeat="bookingDate in booking">
-                    <h3>{{bookingDate['date']}}</h3>
-                    <p>Available: {{availableTimesCount(bookingDate)}}</p>
+                    <p class="date">{{bookingDate['display_date']['day']}}</p>
+                    <p class="date">{{bookingDate['display_date']['month']}}</p>
+                    <p>Доступно : {{availableTimesCount(bookingDate)}}</p>
                     <button type="button" class="book" ng-click="showBookingModal(bookingDate)">БРОНИРОВАТЬ</button>
                 </div>
             </div>
@@ -63,7 +64,7 @@
     </div>
 
     <div class="modal fade" tabindex="-1" role="dialog" id="booking_modal">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -75,30 +76,51 @@
                     {{modalBookingTime['date']}}
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="col-md-6">
+                            <div class="col-md-5">
 
-                                <div class="checkbox checkbox-danger" ng-repeat="time in modalBookingTime['time']">
+                                <div class="checkbox checkbox-danger booking-time-list"
+                                     ng-repeat="time in modalBookingTime['time']">
 
                                     <input id="checkbox{{$index+1}}" ng-model="time.selected" type="checkbox"
                                            ng-click="updateSelection($index, modalBookingTime['time'])"
                                            ng-disabled='time["is_booked"]=="true"'>
                                     <label for="checkbox{{$index+1}}"
                                            ng-class='{"time-booked": time["is_booked"]=="true"}'>
-                                        {{time['value']}}
+                                        <p>{{time['value']}}</p>
                                     </label>
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
-                                2
+                            <div class="col-md-7">
+                                <form class="booking-form">
+                                    <div class="form-group">
+
+                                        <input type="email" class="form-control"
+                                               placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="email" class="form-control"
+                                               placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="email" class="form-control"
+                                               placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="5" cols="40"></textarea>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Забронировать</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn quest-button" ng-click="bookTime(time)">Забронировать</button>
+                    <button type="button" class="btn quest-button-b" data-dismiss="modal">Закрыть</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

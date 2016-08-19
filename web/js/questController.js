@@ -2,6 +2,10 @@
 
 questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'booking', function ($scope, $routeParams, quest, booking) {
 
+    /*$('#booking_modal').on('hidden.bs.modal', function () {
+     booking = {};
+     });*/
+
     angular.extend($scope, {
         //userBooking: {},
         quest: null,
@@ -37,14 +41,10 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
         },
 
         updateSelection: function (position, timeArray) {
-            console.log(timeArray[position]);
+
             var selectedBookingTime = timeArray[position];
 
-            booking['time'] = selectedBookingTime['value'];
-            booking.isTimeBooked();
-            /*$scope.userBooking['time'] = selectedBookingTime['value'];
-             $scope.userBooking['price'] = selectedBookingTime['price'];
-             $scope.userBooking['is_booked'] = selectedBookingTime['is_booked'];*/
+            booking.initBooking(selectedBookingTime);
 
             angular.forEach(timeArray, function (time, index) {
                 if (position != index)
@@ -52,12 +52,12 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
             });
         },
 
-        bookTime: function (time) {
-            console.log(booking);
+        bookTime: function () {
+            //if (booking.isTimeBooked()) booking.showBookingError("Время уже забронировано");
+            booking.bookTime();
             return true;
         }
 
     });
-
 
 }]);

@@ -19,6 +19,26 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/********************************************************BUTTON*************************************************************/
+.quest-button-b {
+    border-radius: 0;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 14px;
+    background-color: #1f2225;
+}
+
+.quest-button {
+    border-radius: 0;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 14px;
+    background-color: #fb383c;
+}
+
+/********************************************************BUTTON*************************************************************/
 /*NAVBAR BEGIN***********************************************************************************************************************/
 .navbar {
     background-color: #1f2225;
@@ -128,6 +148,7 @@ p.reality-tasks-header p {
     display: flex;
     flex-wrap: wrap;
 }
+
 .row-height > [class*='col-'] {
     display: flex;
     flex-direction: column;
@@ -136,6 +157,7 @@ p.reality-tasks-header p {
 .quest-info .description {
     color: #cfcfcf;
 }
+
 .quest-info .description p {
     /*margin-top: 25px;*/
     /*min-height: 80px;*/
@@ -374,16 +396,16 @@ i.fa-1_5x {
 
 /**********************************CONTACT PAGE******************************************/
 /*****************************************STATISTICS****************************************************************/
-.statistics{
+.statistics {
     height: 100%;
     text-align: center;
 }
 
-.statistics div{
+.statistics div {
     height: 100%;
 }
 
-.statistics .center{
+.statistics .center {
     border-right: 1px solid #353638;
     border-left: 1px solid #353638;
 }
@@ -394,17 +416,63 @@ i.fa-1_5x {
     line-height: 100px;
 }
 
-.statistics p.count{
+.statistics p.count {
     font-size: 25px;
     color: white;
 }
-.statistics p.desc{
+
+.statistics p.desc {
     font-size: 16px;
     color: #6c7176;
 }
+
 /*****************************************STATISTICS****************************************************************/
 /********************************************************BOOKING*****************************************************/
 label.time-booked {
     text-decoration: line-through;
 }
+
+#booking_modal .modal-content {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#booking_modal .close {
+    font-size: 30px;
+}
+
+#booking_modal .modal-header, #booking_modal .modal-body, #booking_modal .modal-footer {
+    border: none;
+}
+
+.booking-form textarea {
+    box-shadow: none;
+    border: 1px solid #dcdee0;
+    border-radius: 0;
+    resize: none;
+}
+
+.booking-form input {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #6c7176;
+    border-radius: 0;
+    /*border: 1px solid white;*/
+    box-shadow: none;
+    border: 1px solid #dcdee0;
+}
+
+.booking-time-list p {
+    margin-left: 10px;
+}
+
+.booking-time-list {
+    color: #6c7176;
+}
+.calendar p.date {
+    font-size: 16px;
+    color: #1f2225;
+    /*font-weight: 600;*/
+}
+
 /********************************************************BOOKING*****************************************************/

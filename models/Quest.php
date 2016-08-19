@@ -63,7 +63,7 @@ class Quest extends \yii\db\ActiveRecord
 
     public static function getQuestSchedule($questId)
     {
-        $customDates = new CustomDate();
+        //$customDates = new CustomDate();
         $datesArray = Yii::$app->db->createCommand('select * from custom_dates where
         quest_id = ' . $questId . ' or quest_id = 0')->queryAll();
 
@@ -81,6 +81,10 @@ class Quest extends \yii\db\ActiveRecord
 
             $currentDate = date('Y-m-d', strtotime("+" . $i . " days"));
             $bookingData['date'] = $currentDate;
+
+            $bookingData['display_date']["day"] = Yii::$app->formatter->asDate($bookingData['date'], "d");
+            $bookingData['display_date']["month"] = Yii::$app->formatter->asDate($bookingData['date'], "MMMM");
+            $bookingData['display_date']["day_name"] = Yii::$app->formatter->asDate($bookingData['date'], "EEEE");
 
             array_push($bookingArray, $bookingData);
 
