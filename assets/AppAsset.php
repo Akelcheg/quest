@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
         'js/app.js',
         'js/models/user.js',
         'js/models/quest.js',
+        'js/models/booking.js',
         'js/indexController.js',
         'js/userController.js',
         'js/contactController.js',

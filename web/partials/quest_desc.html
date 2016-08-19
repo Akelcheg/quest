@@ -49,13 +49,13 @@
     <div class="row seven-cols" style="margin-left: 0; margin-right: 0;">
 
         <div class="container">
-            <h3 style="text-align:center;">Август 2015</h3>
+            <h3 style="text-align:center;">Таблица брони на квест "{{quest.name}}"</h3>
             <div class="row" style="margin-left: 0; margin-right: 0;">
 
                 <!-- <div class="calendar-date" style="width:12,3%; margin-left: 10px; margin-top: 10px; float: left; border: 5px solid #ebf2f6; padding: 15px; text-align:center;"> -->
                 <div class="col-md-1 calendar" ng-repeat="bookingDate in booking">
-                    <h3>01</h3>
-                    <p>Available: 1</p>
+                    <h3>{{bookingDate['date']}}</h3>
+                    <p>Available: {{availableTimesCount(bookingDate)}}</p>
                     <button type="button" class="book" ng-click="showBookingModal(bookingDate)">БРОНИРОВАТЬ</button>
                 </div>
             </div>
@@ -70,6 +70,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Бронь на "{{quest.name}}"</h4>
                 </div>
+                {{userBooking}}
                 <div class="modal-body">
                     {{modalBookingTime['date']}}
                     <div class="row">
@@ -77,10 +78,13 @@
                             <div class="col-md-6">
 
                                 <div class="checkbox checkbox-danger" ng-repeat="time in modalBookingTime['time']">
-                                    <input id="checkbox{{$index+1}}" ng-model="time.selected" type="checkbox" ng-click="updateSelection($index, modalBookingTime['time'])">
-                                    <label for="checkbox{{$index+1}}">
+
+                                    <input id="checkbox{{$index+1}}" ng-model="time.selected" type="checkbox"
+                                           ng-click="updateSelection($index, modalBookingTime['time'])"
+                                           ng-disabled='time["is_booked"]=="true"'>
+                                    <label for="checkbox{{$index+1}}"
+                                           ng-class='{"time-booked": time["is_booked"]=="true"}'>
                                         {{time['value']}}
-                                        {{time}}
                                     </label>
                                 </div>
 
