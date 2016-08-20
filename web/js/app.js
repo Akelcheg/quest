@@ -11,10 +11,10 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 templateUrl: 'partials/index.html',
                 controller: 'indexController'
             })
-            /*.when('/quests', {
-             templateUrl: 'partials/quest_desc.html',
-             controller: 'indexController'
-             })*/
+            .when('/quests', {
+             templateUrl: 'partials/quests.html',
+             controller: 'questsController'
+             })
             .when('/quest/:quest_name', {
                 templateUrl: 'partials/quest_desc.html',
                 controller: 'questController'

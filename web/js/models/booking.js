@@ -32,6 +32,16 @@ questApp.factory('booking', ['$http', '$location', '$window', function ($http, $
         this.userRequest = '';
     };
 
+    booking.hasErrorForm = function () {
+
+        var errorMessagesArray = [];
+        if (!this.userName) errorMessagesArray.push("Укажите ваше имя");
+        if (!this.userPhone) errorMessagesArray.push("Укажите ваш номер телефона");
+        if (!this.time) errorMessagesArray.push("Выберите время");
+        return errorMessagesArray;
+
+    };
+
     booking.bookTime = function (cb) {
         var self = this;
         $http({

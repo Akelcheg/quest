@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
         'js/contactController.js',
         'js/aboutController.js',
         'js/questController.js',
+        'js/questsController.js',
         //'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js',
         //'js/libs/jquery-imagefill.js',
         'js/libs/jssor.slider.min.js',

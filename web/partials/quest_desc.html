@@ -89,7 +89,12 @@
                 </div>
 
                 <div class="modal-body">
-                    {{modalBookingTime['date']}}
+                    <div class="alert alert-danger" ng-show="formErrorMessage.length>0">
+                        <p ng-repeat="message in formErrorMessage">{{message}}</p>
+                    </div>
+                    <div class="alert alert-success" ng-show="bookingMessage">
+                        <strong>{{bookingMessage}}</strong>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-5">
@@ -141,7 +146,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn quest-button" ng-click="bookTime(modalBookingTime)">Забронировать</button>
+                    <button type="button" class="btn quest-button" ng-click="bookTime(modalBookingTime)">Забронировать
+                    </button>
                     <button type="button" class="btn quest-button-b" data-dismiss="modal">Закрыть</button>
                 </div>
             </div><!-- /.modal-content -->

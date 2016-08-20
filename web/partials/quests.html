@@ -1,0 +1,180 @@
+<div class="container m20">
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+            <p class="key-icon-filled"><i class="fa fa-key fa-lg" aria-hidden="true"></i></p>
+        </div>
+        <div class="col-md-2 col-md-offset-5">
+            <p class="reality-tasks key-text">КВЕСТ КОМНАТЫ</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+
+    <div ng-repeat="quest in quests">
+
+
+        <div class="row row-height" ng-if="$index%2 == 0" style="margin-left: 0; margin-right: 0;">
+            <div class="col-md-6 hidden-phone" style="padding: 0;">
+
+                <img class="img img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 quest-info" style="background-color: #0c1013;">
+
+
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-md-12" style="margin-top: 10px; color: white;">
+                        <h4>
+                            {{quest['id']}} {{quest['name']}}
+                        </h4>
+
+                    </div>
+
+                    <div class="col-md-8 visible-lg description">
+                        <p>{{quest['description'] | limitTo:350}}...</p>
+                    </div>
+
+                    <div class="col-md-8 hidden-lg description" style="font-size: 12px;">
+                        <p>{{quest['description'] | limitTo:150}}...</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="quest-price-container" style="margin: 0 auto;">
+                            <p class="quest-price">
+                                4561 грн
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row additional-info" style="text-align: left; font-size: 12px;">
+                            <div class="col-md-4 col-xs-12">
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> Водопроводная 1
+                                    А{{quest['address']}}</p>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <p><i class="fa fa-users" aria-hidden="true"></i> 2 - {{quest['people']}} человек</p>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{quest['time']}}60 минут</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="padding-top: 10px; padding-bottom: 10px;">
+                        <a href="quest/{{quest['id']}}" class="btn btn-sm btn-danger">ПОДРОБНЕЕ</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="row row-height" ng-if="$index%2 != 0" style="margin-left: 0; margin-right: 0;">
+            <div class="col-md-6 visible-xs visible-sm" style="padding: 0;">
+
+                <img class="img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 quest-info" style="background-color: #0c1013; color: white;">
+
+
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-md-12" style="margin-top: 10px; color: white;">
+                        <h4>
+                            {{quest['id']}} {{quest['name']}}
+                        </h4>
+
+                    </div>
+
+                    <div class="col-md-8 visible-lg description">
+                        <p>{{quest['description'] | limitTo:350}}...</p>
+                    </div>
+
+                    <div class="col-md-8 hidden-lg description" style="font-size: 12px;">
+                        <p>{{quest['description'] | limitTo:150}}...</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="quest-price-container" style="margin: 0 auto;">
+                            <p class="quest-price">
+                                321312 {{quest['min_price']}} грн
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row additional-info" style="text-align: left; font-size: 12px;">
+                            <div class="col-md-4 col-xs-12">
+                                <p><i class="fa fa-map-marker" aria-hidden="true"></i> Водопроводная 1
+                                    А{{quest['address']}}</p>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <p><i class="fa fa-users" aria-hidden="true"></i> 2 - {{quest['people']}} человек</p>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{quest['time']}}60 минут</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="padding-top: 10px; padding-bottom: 10px;">
+                        <a href="quest/{{quest['id']}}" class="btn btn-sm btn-danger">ПОДРОБНЕЕ</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6 hidden-xs hidden-sm" style="padding: 0;">
+
+                <img class="img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="row row-height">
+
+         <div class="col-md-6 visible-xs visible-sm">
+
+             <img class="img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
+         </div>
+
+         <div class="col-md-6 col-sm-12 quest-info" style="background-color: #090c0e;">
+             <div class="row">
+                 <div class="col-md-12">
+                     <div class="col-md-9">1 das reg erg erg er as,mkdfijao foehghwegwe gwe</div>
+                     <div class="col-md-3">
+                         <div class="quest-price-container">
+                             <p class="quest-price">
+                                 666 грн
+                             </p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="row additional-info">
+                     <div class="col-md-2">55 Wall Street</div>
+                     <div class="col-md-2">{{quest.description}} people</div>
+                     <div class="col-md-2">60 minutes</div>
+                     <div class="col-md-6"></div>
+                 </div>
+             </div>
+
+
+         </div>
+         <div class="col-md-6 hidden-xs hidden-sm">
+
+             <img class="img-responsive" src="img/quest-images/14/logo_small.jpg" alt="">
+
+         </div>
+
+     </div>-->
+
+</div>
