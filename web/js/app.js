@@ -12,9 +12,9 @@ questApp.config(['$routeProvider', '$httpProvider', '$locationProvider',
                 controller: 'indexController'
             })
             .when('/quests', {
-             templateUrl: 'partials/quests.html',
-             controller: 'questsController'
-             })
+                templateUrl: 'partials/quests.html',
+                controller: 'questsController'
+            })
             .when('/quest/:quest_name', {
                 templateUrl: 'partials/quest_desc.html',
                 controller: 'questController'
@@ -66,4 +66,12 @@ questApp.factory('authInterceptor', function ($q, $window, $location) {
             return $q.reject(rejection);
         }
     };
+});
+
+
+$(function () {
+    var navMain = $("#bs-example-navbar-collapse-1");
+    navMain.on("click", "a", null, function () {
+        navMain.collapse('hide');
+    });
 });
