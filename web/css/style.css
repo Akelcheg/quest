@@ -522,7 +522,7 @@ label.time-booked {
 .booking-time-div {
     padding: 5px;
     float: left;
-
+    cursor: pointer;
     text-align: center;
     min-width: 75px;
     min-height: 40px;
@@ -537,6 +537,7 @@ label.time-booked {
 
 .booking-time-div .inner.booked {
     border: 2px solid #eceef0;
+    cursor: not-allowed;
 }
 
 .booking-time-div .inner.booked p {

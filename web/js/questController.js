@@ -10,8 +10,8 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
             quest: null,
             bookingData: null,
             modalBookingTime: [],
-            bookingByTime: true,
-            bookingByDate: false,
+            bookingByTime: false,
+            bookingByDate: true,
             bookingType: "Бронирование - вид по времени"
         });
 
@@ -34,6 +34,24 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
                 if (availableTimes > 0) {
                     $scope.modalBookingTime = bookingTimeArray;
                     $('#booking_modal').modal('show');
+                }
+                return false;
+            },
+
+            showBookingTimeModal: function (date, time) {
+
+                booking.initBooking(time);
+
+                var displayDate = date['display_date']['day'] + ' ' + date['display_date']['month'] + ' ' +
+                    '( ' + date['display_date']['day_name'] + ' )';
+
+                if (time['is_booked'] != 'true') {
+                    $scope.modalBookingTime = {
+                        "time": time,
+                        "date": date['date'],
+                        "display_date": displayDate
+                    };
+                    $('#booking_modal_time').modal('show');
                 }
                 return false;
             },
@@ -62,6 +80,7 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
                         $timeout(function () {
                             $scope.bookingMessage = "";
                             $('#booking_modal').modal('hide');
+                            $('#booking_modal_time').modal('hide');
                             booking.clearBooking();
                         }, 3000);
 

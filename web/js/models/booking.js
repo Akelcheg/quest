@@ -43,7 +43,9 @@ questApp.factory('booking', ['$http', '$location', '$window', function ($http, $
     };
 
     booking.bookTime = function (cb) {
+
         var self = this;
+        console.log (self);
         $http({
             method: "POST",
             url: "api/booking/book",
