@@ -45,7 +45,7 @@
 
 <div my-map=""></div>
 
-<div class="container-fluid" style="background-color: white;padding-left: 0; padding-right: 0;">
+<div class="container-fluid" style="background-color: white; padding-left: 0; padding-right: 0;">
     <div class="row" ng-class="{'seven-cols' : bookingByDate}" style="margin-left: 0; margin-right: 0;">
 
         <div class="container">
@@ -73,9 +73,9 @@
                                 <div class="booking-time-div"
                                      ng-style="{'width':100/date['time'].length+'%'}"
                                      ng-repeat="time in date['time']">
-                                    <div class="inner">
-                                        <p>{{time['value']}}</p>
-                                        <p>{{time['price']}}</p>
+                                    <div class="inner" ng-class="{'booked' : time['is_booked']=='true'}">
+                                        <p class="time">{{time['value']}}</p>
+                                        <p>{{time['price']}} &#8372;</p>
                                     </div>
                                 </div>
                             </div>
@@ -83,6 +83,7 @@
 
                     </div>
                 </div>
+                
             </div>
 
             <div class="row" style="margin-left: 0; margin-right: 0;" ng-if="bookingByDate">

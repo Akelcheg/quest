@@ -501,22 +501,28 @@ label.time-booked {
     color: #1f2225;
 }
 
-.booking-time-div p, .booking-date-div p {
+.booking-time-div p {
     margin-bottom: 0;
+    color: #1f2225;
+}
+
+.booking-date-div p {
+    margin-bottom: 0;
+    color: #090c0e;
 }
 
 .booking-time-div .inner {
-    border: 2px solid #dde5e9;
-
+    border: 2px solid #b5b7b9;
 }
 
 .booking-date-div .inner {
-    border: 2px solid #dde5e9;
+    border: 2px solid #1f2225;
 }
 
 .booking-time-div {
     padding: 5px;
     float: left;
+
     text-align: center;
     min-width: 75px;
     min-height: 40px;
@@ -527,6 +533,14 @@ label.time-booked {
     padding: 5px;
     text-align: center;
     min-height: 40px;
+}
+
+.booking-time-div .inner.booked {
+    border: 2px solid #eceef0;
+}
+
+.booking-time-div .inner.booked p {
+    color: #eceef0;
 }
 
 /********************************************************BOOKING*****************************************************/
