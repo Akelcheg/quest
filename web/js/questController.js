@@ -9,8 +9,10 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
             booking: booking,
             quest: null,
             bookingData: null,
-            modalBookingTime: []
-
+            modalBookingTime: [],
+            bookingByTime: true,
+            bookingByDate: false,
+            bookingType: "Бронирование - вид по времени"
         });
 
         quest.getQuestData($routeParams.quest_name, function (questsObj) {
@@ -71,6 +73,18 @@ questApp.controller('questController', ['$scope', '$routeParams', 'quest', 'book
                     }
                 });
                 return true;
+            },
+
+            setDateBookingView: function () {
+                this.bookingByDate = true;
+                this.bookingByTime = false;
+                this.bookingType = "Бронирование - вид по дням";
+            },
+
+            setTimeBookingView: function () {
+                this.bookingByTime = true;
+                this.bookingByDate = false;
+                this.bookingType = "Бронирование - вид по времени";
             }
 
         });

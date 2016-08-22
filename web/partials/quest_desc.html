@@ -17,8 +17,8 @@
                 {{quest['description']}}</p>
 
             <div class="quest-rules">
-                <p>Minimum age of participants: 16 years.</p>
-                <p>Please come on in quest of comfortable shoes without heels</p>
+                <p>Минимальный возрас: 16 лет.</p>
+                <p>Старайтесь не опоздать и приходите в удобной обуди и одежде</p>
             </div>
         </div>
         <div class="col-md-3 col-md-offset-1" style="margin:0;">
@@ -34,7 +34,7 @@
 								<i class="fa fa-location-arrow" aria-hidden="true"></i>
 							</span> Водопроводная 1 А</p>
                 </div>
-                <button type="button" class="btn btn-danger">ЗАБРОНИРОВАТЬ</button>
+                <!--<button type="button" class="btn btn-danger">ЗАБРОНИРОВАТЬ</button>-->
             </div>
         </div>
 
@@ -46,11 +46,38 @@
 <div my-map=""></div>
 
 <div class="container-fluid" style="background-color: white;padding-left: 0; padding-right: 0;">
-    <div class="row seven-cols" style="margin-left: 0; margin-right: 0;">
+    <div class="row" ng-class="{'seven-cols' : bookingByDate}" style="margin-left: 0; margin-right: 0;">
 
         <div class="container">
             <h3 style="text-align:center;">Таблица брони на квест "{{quest.name}}"</h3>
-            <div class="row" style="margin-left: 0; margin-right: 0;">
+            <div class="col-md-12" style="text-align: center; margin-bottom: 25px;">
+                <h2>{{bookingType}}</h2>
+                <a href="#" class="btn quest-button-sm" ng-click="setDateBookingView()">Бронь по дням</a>
+                <a href="#" class="btn quest-button-sm" ng-click="setTimeBookingView()">Бронь по времени</a>
+            </div>
+
+            <div class="row" style="margin-left: 0; margin-right: 0;" ng-if="bookingByTime">
+                <div class="row" ng-repeat="date in bookingData">
+
+                    <div class="col-md-12">
+                        <div class="col-md-1" style="border: 1px solid black;">
+                            {{date['display_date']['day']}}
+                            {{date['display_date']['month']}}
+                        </div>
+                        <div class="col-md-11">
+                            <div class="col-md-1"
+                                 ng-style="{'width':100/date['time'].length+'%'}"
+                                 ng-repeat="time in date['time']"
+                                 style="border: 1px solid black;">
+                                <p>{{time['value']}}</p>
+                                <p>{{time['price']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: 0; margin-right: 0;" ng-if="bookingByDate">
 
                 <!-- <div class="calendar-date" style="width:12,3%; margin-left: 10px; margin-top: 10px; float: left; border: 5px solid #ebf2f6; padding: 15px; text-align:center;"> -->
                 <div class="col-md-1 calendar" ng-repeat="bookingDate in bookingData"
@@ -72,10 +99,12 @@
 
                     <a type="button" class="btn quest-button-b-sm"
                        ng-disabled="availableTimesCount(bookingDate)==0"
-                       ng-click="showBookingModal(bookingDate,availableTimesCount(bookingDate))">БРОНИРОВАТЬ
+                       ng-click="showBookingModal(bookingDate,availableTimesCount(bookingDate))">БРОНЬ
                     </a>
                 </div>
             </div>
+
+
         </div>
     </div>
 
