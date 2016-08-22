@@ -36,7 +36,7 @@ html, body {
 }*/
 
 .btn:hover, .btn:focus, .btn.focus {
-     color: white;
+    color: white;
 }
 
 .quest-button-b-sm {
@@ -46,7 +46,6 @@ html, body {
     font-size: 12px;
     background-color: #1f2225;
 }
-
 
 .quest-button-sm {
     border-radius: 0;
@@ -500,7 +499,34 @@ label.time-booked {
 .calendar p.date {
     font-size: 16px;
     color: #1f2225;
-    /*font-weight: 600;*/
+}
+
+.booking-time-div p, .booking-date-div p {
+    margin-bottom: 0;
+}
+
+.booking-time-div .inner {
+    border: 2px solid #dde5e9;
+
+}
+
+.booking-date-div .inner {
+    border: 2px solid #dde5e9;
+}
+
+.booking-time-div {
+    padding: 5px;
+    float: left;
+    text-align: center;
+    min-width: 75px;
+    min-height: 40px;
+}
+
+.booking-date-div {
+    /*border: 3px solid #dde5e9;*/
+    padding: 5px;
+    text-align: center;
+    min-height: 40px;
 }
 
 /********************************************************BOOKING*****************************************************/

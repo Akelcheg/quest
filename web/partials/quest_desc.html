@@ -56,23 +56,31 @@
                 <a href="#" class="btn quest-button-sm" ng-click="setTimeBookingView()">Бронь по времени</a>
             </div>
 
-            <div class="row" style="margin-left: 0; margin-right: 0;" ng-if="bookingByTime">
-                <div class="row" ng-repeat="date in bookingData">
+            <div ng-if="bookingByTime">
+                <div ng-repeat="date in bookingData">
 
                     <div class="col-md-12">
-                        <div class="col-md-1" style="border: 1px solid black;">
-                            {{date['display_date']['day']}}
-                            {{date['display_date']['month']}}
-                        </div>
-                        <div class="col-md-11">
-                            <div class="col-md-1"
-                                 ng-style="{'width':100/date['time'].length+'%'}"
-                                 ng-repeat="time in date['time']"
-                                 style="border: 1px solid black;">
-                                <p>{{time['value']}}</p>
-                                <p>{{time['price']}}</p>
+                        <div class="row">
+
+                            <div class="col-md-1 booking-date-div">
+                                <div class="inner">
+                                    <p>{{date['display_date']['day']}}</p>
+                                    <p>{{date['display_date']['month']}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+
+                                <div class="booking-time-div"
+                                     ng-style="{'width':100/date['time'].length+'%'}"
+                                     ng-repeat="time in date['time']">
+                                    <div class="inner">
+                                        <p>{{time['value']}}</p>
+                                        <p>{{time['price']}}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -136,7 +144,7 @@
                                            ng-disabled='time["is_booked"]=="true"'>
                                     <label for="checkbox{{$index+1}}"
                                            ng-class='{"time-booked": time["is_booked"]=="true"}'>
-                                        <p>{{time['value']}}</p>
+                                        <p>На {{time['value']}} - {{time['price']}} грн.</p>
                                     </label>
                                 </div>
 
